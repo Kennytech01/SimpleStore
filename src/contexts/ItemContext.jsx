@@ -4,6 +4,8 @@ export const ItemContext = createContext()
 
 export const ItemProvider = ({children}) => {
     const [items, setItems] = useState([])
+    const [popUP, setPopUp] = useState([])
+    const [toggle, setToggle] = useState(false)
    
     useEffect(() => {
       try {
@@ -15,18 +17,27 @@ export const ItemProvider = ({children}) => {
           // https://fakeecommerceapi.onrender.com/api/v1/products
           const reponse = await fetch("https://fakestoreapi.com/products");
           const data = await reponse.json();
-          // data = JSON.parse(data)
           setItems(data)
-          console.log(data)
+          // console.log(data)
         }
         fetchItems();
       } catch (error) {
         console.log(error)
       }
     }, [])
+
+    const handleClick = (product) => {
+      setPopUp([product])
+      setToggle(!toggle)
+      console.log(popUP)
+  }
+  // useEffect(()=>{
+  //     const BODY = document.querySelector('body');
+  //     BODY.style.overflow = setToggle? 'hidden' : 'auto';
+  // }, [setToggle])
     
   return (
-    <ItemContext.Provider value={{items}}>   
+    <ItemContext.Provider value={{items, popUP, toggle, handleClick}}>   
         {children}  
     </ItemContext.Provider>
   )
