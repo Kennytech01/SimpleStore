@@ -58,16 +58,16 @@ import {FaTimes} from 'react-icons/fa'
                     popUP.map((pop)=>{
                         return (
                             <div onClick={()=> handleClick(pop)} className='fixed flex items-center justify-center top-0 left-0 right-0 h-screen w-full bg-black/70 z-[999]'>
-                                <div className='bg-white w-2/3 h-2/3 relative shadow-lg  rounded'>
+                                <div className='bg-white md:w-2/3 w-4/5 md:h-2/3 relative shadow-lg  rounded'>
                                     <button onClick={()=>handleClick(pop)} className='text-right absolute right-2 top-2 text-xl font-bold border rounded-full'><FaTimes/></button>
-                                    <div className='p-5 h-full flex' >
-                                        <div className='justify-center bg-white w-1/2 flex items-center'>
+                                    <div className='p-2 md:p-5 h-full flex md:flex-row flex-col justify-center items-center' >
+                                        <div className='justify-center bg-white w-1/2 md:h-2/3 flex items-center'>
                                             <img src={pop?.image} alt="" className=' object-center object-contain h-full w-full p-3' />
                                         </div>
-                                        <div className='w-2/3 flex  items-center p-2'>
+                                        <div className='md:w-2/3 md:flex  items-center p-2'>
                                             <div>
-                                                <p className='text-2xl font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>{pop.title}</p>
-                                                <p className=' '><span className='font-bold text-lg'>Details: </span>{pop?.description}</p>
+                                                <p className='md:text-2xl text-xl font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>{pop.title}</p>
+                                                <p className='line-clamp-3 md:line-clamp-none '><span className='font-bold text-lg  '>Details: </span>{pop?.description}</p>
                                                 <p className='flex justify-between p-2'>
                                                     <p className='text-stone-100 font-bold bg-[#781d75] p-1 rounded'>${pop?.price}</p>
                                                     <p className='capitalize text-stone-500 font-semibold'>{pop?.category}</p>
