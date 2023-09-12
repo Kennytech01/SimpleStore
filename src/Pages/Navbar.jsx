@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 import { Home } from './Home'
 
 export const Navbar = () => {
-    const [mobile, setMobile] = useState(false)
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true)
         
@@ -31,12 +30,12 @@ export const Navbar = () => {
    
  
   return (
-    <div className=' sticky z-[999] top-0 bg-white'>
+    <div className=' sticky z-[99] top-0 bg-white'>
         <div className='flex justify-between items-center h-20'>
             {/* leftSide */}
             <div className='flex items-center'>
-                <div className='h-10 mx-2 items-center'>
-                    <p className='font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>SimpleStore</p>
+                <div className='h-10 mx-2 items-center '>
+                    <p className='font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</p>
                 </div>
             </div>
             <div onChange={handleScroll} className={` h-1/2 w-96 hidden lg:flex ${visible ? 'top-0' : ''} `}>
@@ -64,12 +63,6 @@ export const Navbar = () => {
                         <li className='flex items-center px-3 py-2 rounded-lg font-bold'>Join</li>
                     </NavLink>
                 </ul>
-                {/* mobile */}
-                <div className='flex flex-cols md:hidden px-3'>
-                    <motion.span onClick={()=> setMobile(!mobile)} transition={{delay:5}}>
-                        {mobile?<LiaTimesSolid size={30} /> : <HiMiniBars3BottomRight size={30} />}
-                    </motion.span>
-                </div>
             </div>
         </div>
     </div>

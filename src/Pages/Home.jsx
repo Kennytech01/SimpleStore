@@ -3,12 +3,13 @@ import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.jpg'
 import {LiaPlusSolid} from 'react-icons/lia'
 import {FaTimes} from 'react-icons/fa'
+import { SidepriceTag } from '../Components/SidepriceTag'
 
 
 
  export const Home = () => {
     const {items, popUP, toggle, handleClick} = useContext(ItemContext)
-    console.log(popUP)
+    // console.log(popUP)
   return (
     <div> 
         <div className='h-[90vh] relative group'>
@@ -26,7 +27,8 @@ import {FaTimes} from 'react-icons/fa'
         </div>
         <div className='text-center pt-10'>
             <p className='capitalize text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
-        </div>   
+        </div>
+        {/* items    */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-10'>
             {
                 items.map((product) => {
@@ -66,14 +68,14 @@ import {FaTimes} from 'react-icons/fa'
                                         </div>
                                         <div className='md:w-2/3 md:flex  items-center p-2'>
                                             <div>
-                                                <p className='md:text-2xl text-xl font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>{pop.title}</p>
+                                                <p className='md:text-2xl text-xl font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'>{pop.title}</p>
                                                 <p className='line-clamp-3 md:line-clamp-none '><span className='font-bold text-lg  '>Details: </span>{pop?.description}</p>
                                                 <p className='flex justify-between p-2'>
                                                     <p className='text-stone-100 font-bold bg-[#781d75] p-1 rounded'>${pop?.price}</p>
                                                     <p className='capitalize text-stone-500 font-semibold'>{pop?.category}</p>
                                                 </p>
                                                 <p className='w-full flex items-center justify-between h-10 my-3 bg-stone-200/40 rounded hover:bg-[#781d75] transition-all duration-500'>
-                                                    <input type="button" value="Add to Shopping Cart" className=' w-full h-full font-bold hover:text-stone-100 text-stone-500' />
+                                                    <input type="button" value="Add to Shopping Cart" className=' w-full h-full font-bold hover:text-stone-100 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'/>
                                                     <label htmlFor="" className='bg-stone-200 p-2 rounded m-1'><LiaPlusSolid/></label>
                                                 </p>   
                                             </div>                                        

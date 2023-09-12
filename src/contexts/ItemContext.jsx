@@ -6,6 +6,18 @@ export const ItemProvider = ({children}) => {
     const [items, setItems] = useState([])
     const [popUP, setPopUp] = useState([])
     const [toggle, setToggle] = useState(false)
+
+   
+  // useEffect(()=>{
+  //     const BODY = document.querySelector('body');
+  //     BODY.style.overflow = setToggle? 'hidden' : 'auto';
+  // }, [setToggle])
+
+  const handleClick = (product) => {
+    setPopUp([product])
+    setToggle(!toggle)
+    // console.log(popUP)
+}
    
     useEffect(() => {
       try {
@@ -26,15 +38,6 @@ export const ItemProvider = ({children}) => {
       }
     }, [])
 
-    const handleClick = (product) => {
-      setPopUp([product])
-      setToggle(!toggle)
-      console.log(popUP)
-  }
-  // useEffect(()=>{
-  //     const BODY = document.querySelector('body');
-  //     BODY.style.overflow = setToggle? 'hidden' : 'auto';
-  // }, [setToggle])
     
   return (
     <ItemContext.Provider value={{items, popUP, toggle, handleClick}}>   
