@@ -38,7 +38,7 @@ export const FooterBar = () => {
             {
                 mobile && (
                     <div  className='bg-black/30 fixed top-0 left-0 right-0 h-full w-full z-[999] duration-500 transition-all'>
-                        <div  className='w-1/2 fixed  shadow-lg left-0 md:-left-0 top-0 h-full  duration-500 transition-all'>
+                        <div  className='w-4/5 fixed  shadow-lg left-0 md:-left-0 top-0 h-full  duration-500 transition-all'>
                             <div className='relative bg-white h-full'>
                                 <p onClick={()=> setMobile(!mobile)} className=' flex items-end justify-end p-2 '><LiaTimesSolid size={30} /></p>
                                 <div className='h-10 mx-2 items-center border-b'>
