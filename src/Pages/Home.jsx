@@ -11,11 +11,11 @@ import { SidepriceTag } from '../Components/SidepriceTag'
     const {items, popUP, toggle, handleClick} = useContext(ItemContext)
     // console.log(popUP)
   return (
-    <div> 
-        <div className='h-[90vh] relative group'>
+    <div className=''> 
+        <div className='h-[90vh] group'>
             {/* <div className='bg-black/30 z-10 h-full absolute top-0 left-0 right-0 hidden group-hover:flex duration-500'></div> */}
             <img src={Shopping} alt="" className='h-full w-full object-cover'/>
-            <div className='absolute z-20 top-2 -left-[35rem] items-start justify-start h-1/2 group-hover:left-10 duration-500 transition-all '>
+            <div className='absolute -z-10 top-2 -left-[35rem] items-start justify-start h-1/2 group-hover:left-10 duration-500 transition-all '>
                 <div className='bg-stone-2 rounded h-full flex flex-col justify-center'>
                     <p className='font-bold text-[#752d42] text-sm'>-TREND</p>
                     <h1 className='text-4xl  font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] underline'>SimpleStore sale stylish womens</h1>
@@ -24,6 +24,7 @@ import { SidepriceTag } from '../Components/SidepriceTag'
                     </span>
                 </div>
             </div>
+            <div></div>
         </div>
         <div className='text-center pt-10'>
             <p className='capitalize text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
@@ -59,9 +60,9 @@ import { SidepriceTag } from '../Components/SidepriceTag'
                 {toggle && (
                     popUP.map((pop)=>{
                         return (
-                            <div onClick={()=> handleClick(pop)} className='fixed flex items-center justify-center top-0 left-0 right-0 h-screen w-full bg-black/70 z-[999]'>
+                            <div className='fixed flex items-center justify-center top-0 left-0 right-0 h-screen w-full bg-black/70 z-[999]'>
                                 <div className='bg-white md:w-2/3 w-4/5 md:h-2/3 relative shadow-lg  rounded'>
-                                    <button onClick={()=>handleClick(pop)} className='text-right absolute right-2 top-2 text-xl font-bold border rounded-full'><FaTimes/></button>
+                                    <button onClick={()=>handleClick(pop)} className='absolute right-4 top-4 text-xl font-bold '><FaTimes/></button>
                                     <div className='p-2 md:p-5 h-full flex md:flex-row flex-col justify-center items-center' >
                                         <div className='justify-center bg-white w-1/2 md:h-2/3 flex items-center'>
                                             <img src={pop?.image} alt="" className=' object-center object-contain h-full w-full p-3' />
