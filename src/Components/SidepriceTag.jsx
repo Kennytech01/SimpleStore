@@ -2,12 +2,12 @@ import React, {useContext} from 'react'
 import {LuBaggageClaim} from 'react-icons/lu'
 import { SidebarContext } from '../contexts/SidebarContext'
 import {LiaTimesSolid} from 'react-icons/lia'
-import { CartContext } from '../contexts/CartContext'
+// import { CartContext } from '../contexts/CartContext'
 
 
 export const SidepriceTag = () => {
   const {handleClose, isOpen} = useContext(SidebarContext)
-  console.log(useContext(CartContext))
+  
 
   return (
     <div>
@@ -22,7 +22,7 @@ export const SidepriceTag = () => {
                 </p>
                 <p onClick={handleClose} className=' flex items-end justify-end p-2 '><LiaTimesSolid size={30} /></p>
               </div>
-              <div className='absolute bottom-10 p-2 h-14 right-4 left-4 flex justify-between font-bold items-center rounded-2xl  bg-gradient-to-tr from-[#781d75] to-[#EC094D]'>
+              <div className='absolute bottom-10 p-2 h-14 sm:right-4 sm:left-4 flex justify-between font-bold items-center rounded-2xl  bg-gradient-to-tr from-[#781d75] to-[#EC094D]'>
                 <span className='text-xl text-stone-50'>Proceed to Checkout</span>
                 <button className='p-2 rounded-full bg-white w-1/5 h-full hover:scale-105 transition-all duration-500 shadow-lg'>$total</button>
               </div>

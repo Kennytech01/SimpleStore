@@ -3,13 +3,12 @@ import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.jpg'
 import {LiaPlusSolid} from 'react-icons/lia'
 import {FaTimes} from 'react-icons/fa'
-import { SidepriceTag } from '../Components/SidepriceTag'
-
-
+import { CartContext } from '../contexts/CartContext'
 
  export const Home = () => {
     const {items, popUP, toggle, handleClick} = useContext(ItemContext)
-    // console.log(popUP)
+    const {addCart} = useContext(CartContext)
+
   return (
     <div className=''> 
         <div className='h-[90vh] group'>
@@ -27,27 +26,29 @@ import { SidepriceTag } from '../Components/SidepriceTag'
             <div></div>
         </div>
         <div className='text-center pt-10'>
-            <p className='capitalize text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
+            <p className='capitalize sm:text-4xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
         </div>
         {/* items    */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:m-10 m-5'>
             {
                 items.map((product) => {
                     return (
-                    <div key={product.id} onClick={()=>handleClick(product)} className='rounded h-96 flex flex-col justify-between p-4 bg-white shadow '>
-                        <div className='h-1/2 flex justify-center items-center hover:scale-110 duration-500 transition-all'>
-                            <img src={product?.image} alt="" className='h-full w-ful object-top'/>
-                        </div>
-                        <div>
-                            <p className='flex justify-between p-2'>
+                    <div key={product.id} className='rounded h-96 flex flex-col justify-between sm:p-4 p-1 bg-white shadow '>
+                        <div onClick={()=> handleClick(product)} className='h-4/5 flex flex-col justify-center'>
+                            <div className='h-1/2 flex justify-center items-center'>
+                                <img src={product?.image} alt="" className='h-full w-ful object-top hover:scale-110 duration-500 transition-all'/>
+                            </div>
+                            <p className='flex justify-between items-center p-2'>
                                 <p className='text-stone-100 font-bold bg-[#781d75] p-1 rounded'>${product?.price}</p>
                                 <p className='capitalize text-stone-500 font-semibold'>{product?.category}</p>
                             </p>
-                            <p className='font-bold text-[#781d75] '>{product?.title}</p>
-                            <p className='w-full flex items-center justify-between h-10 my-3 bg-stone-200/40 rounded hover:bg-[#781d75] transition-all duration-500'>
+                            <p className='font-bold text-[#781d75] line-clamp-3 p-1'>{product?.title}</p>
+                        </div>
+                        <div className='h-1/2 flex justify-center items-center'>
+                            <div onClick={addCart} className='w-full flex items-center justify-between h-10 my-3 bg-stone-200/40 rounded hover:bg-[#781d75] transition-all duration-500'>
                                 <input type="button" value="Add" className=' w-full h-full font-bold hover:text-stone-100 text-stone-500' />
                                 <label htmlFor="" className='bg-stone-200 p-2 rounded m-1'><LiaPlusSolid/></label>
-                            </p>
+                            </div>
                         </div>
                     </div>
                     )

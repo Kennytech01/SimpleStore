@@ -33,10 +33,8 @@ export const Navbar = () => {
     <div className=' sticky  top-0 bg-white'>
         <div className='flex justify-between items-center h-20 z-[999]'>
             {/* leftSide */}
-            <div className='flex items-center'>
-                <div className='h-10 mx-2 items-center '>
-                    <p className='font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</p>
-                </div>
+            <div className='mx-2 relative'>
+                <p className=' font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</p>
             </div>
             <div onChange={handleScroll} className={` h-1/2 w-96 hidden lg:flex ${visible ? 'top-0' : ''} `}>
                 <input type="search" name="search" id="" placeholder='Type your search...' className='bg-stone-200/40 w-full h-full px-2 rounded outline-none' />
