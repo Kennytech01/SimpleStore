@@ -6,7 +6,6 @@ import { ItemContext } from '../contexts/ItemContext'
 import {Link} from 'react-router-dom'
 // import { CartContext } from '../contexts/CartContext'
 
-
 export const SidepriceTag = () => {
   const {handleClose, isOpen} = useContext(SidebarContext)
   const {popUP, toggle} = useContext(ItemContext)

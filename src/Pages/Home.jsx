@@ -1,9 +1,9 @@
 import React, { useContext} from 'react'
 import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.jpg'
-import { CartContext } from '../contexts/CartContext'
 import {LiaPlusSolid, LiaStar} from 'react-icons/lia'
 import {FaTimes} from 'react-icons/fa'
+import { TypeAnimation } from 'react-type-animation'
 
  export const Home = () => {
     const {items, toggle, popUP, handleClick, addToCart} = useContext(ItemContext)
@@ -12,19 +12,42 @@ import {FaTimes} from 'react-icons/fa'
 
   return (
     <div className=''> 
-        <div className='h-[90vh] group'>
+        <div className='h-[90vh] group relative mt-[5rem]'>
             {/* <div className='bg-black/30 z-10 h-full absolute top-0 left-0 right-0 hidden group-hover:flex duration-500'></div> */}
-            <img src={Shopping} alt="" className='h-full w-full object-cover'/>
-            <div className='absolute -z-10 top-2 -left-[35rem] items-start justify-start h-1/2 group-hover:left-10 duration-500 transition-all '>
+            <img src={Shopping} alt="" className='h-full w-full object-cover object-right' style={{transform :`scaleX(-1)`}}/>
+            <div className='absolute z-10 top-28 items-start justify-start h-1/2 left-10 duration-500 transition-all '>
                 <div className='bg-stone-2 rounded h-full flex flex-col justify-center'>
                     <p className='font-bold text-[#752d42] text-sm'>-TREND</p>
-                    <h1 className='text-4xl  font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] underline'>SimpleStore sale stylish womens</h1>
-                    <span className='flex items-center hover:underline decoration-[#781d75] decoration-4 underline-offset-4 duration-500 transition-all py-4 font-bold text-stone-600 text-xl'>
+                    {/* <h1 className=' underline'>SimpleStore sale stylish womens</h1> */}
+                    <h1 className="flex flex-wrap py-5 text-4xl  font-bold p-3 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]">
+                        SimpleStore sale
+                        <TypeAnimation 
+                            sequence={[
+                                'Smart Phones',
+                                2000,
+                                'Quality Laptops',
+                                2000,
+                                'Groeries',
+                                2000,
+                                'Skincare',
+                                2000,
+                                'Fragrance',
+                                2000,
+                                'Groeries',
+                                2000,
+                            ]}
+                            wrapper="div"
+                            speed={30}
+                            repeat={Infinity}
+                            className='ml-1 px-2 bg-[#781d75]/20 text-stone-100'
+                        /> 
+                    </h1>
+                    <span className='flex items-center decoration-4 relative underline-offset-4 duration-500 transition-all py-4 font-bold text-stone-100 text-xl'>
                         Discover More 
+                        <span className='absolute h-full w-10 transition-all group-hover:w-40 -left-2 bg-[#781d75] -z-10 shadow-lg rounded duration-700 '></span>
                     </span>
                 </div>
             </div>
-            <div></div>
         </div>
         <div className='text-center pt-10'>
             <p className='capitalize sm:text-4xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>

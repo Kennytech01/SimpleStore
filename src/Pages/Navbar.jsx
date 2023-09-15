@@ -1,12 +1,7 @@
 import React, { useState, useEffect} from 'react'
-import PickBazar from '../assets/images/PickBazar.png'
-import {Link, NavLink} from 'react-router-dom'
-import {LiaTimesSolid} from 'react-icons/lia'
-import {HiMiniBars3BottomRight} from 'react-icons/hi2'
-import { motion } from 'framer-motion'
+import { NavLink} from 'react-router-dom'
 import { Home } from './Home'
 import { SignIn } from '../Components/SignIn'
-import { SignUp } from '../Components/SignUp'
 import { AdminDashboard } from '../Components/AdminDashboard'
 
 export const Navbar = () => {
@@ -33,8 +28,8 @@ export const Navbar = () => {
    
  
   return (
-    <div className=' sticky top-0 bg-white'>
-        <div className='flex justify-between items-center h-20 z-[999]'>
+    <div className='z-40 fixed top-0 w-full'>
+        <div className='flex justify-between items-center h-20 bg-white'>
             {/* leftSide */}
             <div className='mx-2 relative'>
                 <p className=' font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</p>
