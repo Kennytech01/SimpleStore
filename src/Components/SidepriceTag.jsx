@@ -39,7 +39,7 @@ export const SidepriceTag = () => {
                 </div>
                 <div className='absolute bottom-10 p-2 h-14 right-2 left-2 flex justify-between font-bold items-center rounded-2xl bg-gradient-to-tr from-[#781d75] to-[#EC094D]'>
                   <span className='text-stone-50'>Proceed to Checkout</span>
-                  <button className='p-2 rounded-full bg-white text-[#781d75] h-full hover:scale-105 transition-all duration-500 shadow-lg'>$Total</button>
+                  <button className='p-2 rounded-full bg-white text-[#781d75] h-full hover:scale-105 transition-all duration-500 shadow-lg'>$0.00</button>
                 </div>
               </div>
             </div>

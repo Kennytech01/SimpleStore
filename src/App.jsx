@@ -2,7 +2,8 @@ import React from 'react'
 import { Navbar } from './Pages/Navbar'
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import { Home } from './Pages/Home'
-import { FooterBar } from './Components/FooterBar'
+import { BottomMenu } from './Components/BottomMenu'
+import {Footer} from './Components/Footer'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>}/>
         </Routes>
-        <FooterBar/>
+        <BottomMenu/>
+        <Footer/>
       </Router>
     </div>
   )

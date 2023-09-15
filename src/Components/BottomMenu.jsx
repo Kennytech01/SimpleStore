@@ -9,7 +9,7 @@ import { Home } from '../Pages/Home'
 import { SidebarContext } from '../contexts/SidebarContext'
 
 
-export const FooterBar = () => {
+export const BottomMenu = () => {
   const {mobile, clickMobile, handleClose, isOpen} = useContext(SidebarContext)
   
 
