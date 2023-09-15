@@ -66,7 +66,7 @@ import {FaTimes} from 'react-icons/fa'
                     return (
                         <div className='relative flex items-center justify-center h-screen w-full group'>
                             <div onClick={()=>handleClick(pop)}  className='fixed right-0 left-0 top-0 w-full h-screen bg-black/70 z-10'></div>
-                            <div className='bg-white shadow-lg fixed z-[999] top-0 bottom-0 sm:m-24 m-10 rounded cursor-pointer '>
+                            <div className='bg-white shadow-lg fixed z-[999] top-0 bottom-0 sm:m-24 m-10 my-28 rounded cursor-pointer '>
                                 <button onClick={()=>handleClick(pop)} className='absolute right-4 top-4 text-xl font-bold '><FaTimes/></button>
                                 <span className='absolute top-0 md:top-4 left-0 md:left-4 flex text-sm justify-end font-bold  bg-gradient-to-tr from-[#781d75] to-[#EC094D] bg-clip-text text-transparent p-1 rounded group-hover:underline'>{pop?.discountPercentage.toFixed(2)}%</span>
                                 <div className='p-2 md:p-5 h-full flex md:flex-row flex-col justify-center items-center' >
