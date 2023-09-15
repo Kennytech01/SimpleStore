@@ -5,6 +5,9 @@ import {LiaTimesSolid} from 'react-icons/lia'
 import {HiMiniBars3BottomRight} from 'react-icons/hi2'
 import { motion } from 'framer-motion'
 import { Home } from './Home'
+import { SignIn } from '../Components/SignIn'
+import { SignUp } from '../Components/SignUp'
+import { AdminDashboard } from '../Components/AdminDashboard'
 
 export const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -54,10 +57,10 @@ export const Navbar = () => {
                     <NavLink to = '/' element={<Home/>} className= "hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
                         <li className='flex items-center px-3 py-2 rounded-lg'>Contact</li>
                     </NavLink>
-                    <NavLink to = '/' element={<Home/>} className= "bg-[#781d75] text-stone-50 rounded-lg" >
+                    <NavLink to = '/admindashboard' element={<AdminDashboard/>} className= "bg-[#781d75] text-stone-50 rounded-lg" >
                         <li className='flex items-center px-3 py-2 rounded-lg font-bold'>Become a Seller</li>
                     </NavLink>
-                    <NavLink to = '/' element={<Home/>} className= "bg-[#781d75] text-stone-50 rounded-lg ml-3" >
+                    <NavLink to = '/signin' element={<SignIn/>} className= "bg-[#781d75] text-stone-50 rounded-lg ml-3" >
                         <li className='flex items-center px-3 py-2 rounded-lg font-bold'>Join</li>
                     </NavLink>
                 </ul>
