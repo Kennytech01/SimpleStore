@@ -4,43 +4,49 @@ export const ItemContext = createContext()
 
 export const ItemProvider = ({children}) => {
     const [items, setItems] = useState([])
-    const [popUP, setPopUp] = useState([])
     const [toggle, setToggle] = useState(false)
-
+    const [popUP, setPopUp] = useState([])
    
   // useEffect(()=>{
   //     const BODY = document.querySelector('body');
   //     BODY.style.overflow = setToggle? 'hidden' : 'auto';
   // }, [setToggle])
 
-  const handleClick = (product) => {
-    setPopUp([product])
-    setToggle(!toggle)
-    // console.log(popUP)
-}
-   
-    useEffect(() => {
-      try {
-        const fetchItems = async ()=> {
-          // https://dummyjson.com/products'
-          // https://fakestoreapi.com/products
-          // https://jsonplaceholder.typicode.com/posts
-          // https://api.escuelajs.co/api/v1/products
-          // https://fakeecommerceapi.onrender.com/api/v1/products
-          const reponse = await fetch("https://fakestoreapi.com/products");
-          const data = await reponse.json();
-          setItems(data)
-          // console.log(data)
-        }
-        fetchItems();
-      } catch (error) {
-        console.log(error)
-      }
-    }, [])
+      const handleClick = (product) => {
+        setToggle(!toggle)
+        setPopUp([product])
 
+    }
+
+    useEffect(() => {
+      const getProducts = async () => {
+        const response = await fetch('https://dummyjson.com/products')  // fetch the products
+        const data = await response.json() // convert the response to json
+        setItems(data.products) // set the products in the state to the products we fetched
+      }
+      getProducts()
+    }, [])
     
+    // console.log(items)
+   
+    // useEffect(() => {
+    //   try {
+    //     const fetchItems = async ()=> {
+    //       const reponse = await fetch("https://dummyjson.com/products");
+    //       const data = await reponse.json();
+    //       setItems(data.products)
+          
+    //     }
+    //     fetchItems();
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // }, [])
+    // console.log(items)
+    
+        
   return (
-    <ItemContext.Provider value={{items, popUP, toggle, handleClick}}>   
+    <ItemContext.Provider value={{items, toggle, popUP, handleClick}}>   
         {children}  
     </ItemContext.Provider>
   )
