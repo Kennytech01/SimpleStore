@@ -14,7 +14,7 @@ import { Product } from '../Components/Product'
                 <img src={Shopping} alt="" className=' object-contain object-center border-2 border-[#781d75]/30 rounded-full p-10 lg:w-[32rem] w-80 lg:h-[32rem] h-80' style={{transform: `scaleX(-1)`}}/>
             </div>
             <div className=' items-center justify-center min-h-full  duration-500 transition-all '>
-                <div className='bg-stone-2 rounded flex flex-col justify-center h-full '>
+                <div className='bg-stone-2 rounded flex flex-col justify-center h-full mx-5'>
                     <p className='font-bold text-[#752d42] text-sm'>-TREND</p>
                     <h1 className="flex flex-wrap py-5 md:text-4xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]">
                         SimpleStore sale
