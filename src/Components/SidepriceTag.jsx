@@ -61,7 +61,7 @@ export const SidepriceTag = () => {
             )
             : (
           <div onClick={handleClose} className='fixed top-1/2 md:right-0 -right-40 transition-all duration-300 bg-[#781d75] h-20 w-auto text-stone-100 font-bold px-1 flex flex-col justify-around items-center shadow'>
-            <p className='flex items-center text-sm'>
+            <p className='flex items-center text-sm w-full'>
                 {itemAmount > 1 ? itemAmount + ' items' : itemAmount + ' item'}
                 <LuBaggageClaim className='mr-1'/>
             </p>
