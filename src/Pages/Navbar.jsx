@@ -16,7 +16,7 @@ export const Navbar = () => {
    
  
   return (
-    <div className={`${isActive ? 'bg-[#461a44] text-stone-50' : 'bg-stone-50 bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'} z-40 fixed top-0 w-full transition-all shadow`}>
+    <div className={`${isActive ? 'bg-[#461a44] text-stone-50' : ' bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'} z-40 fixed top-0 w-full transition-all shadow`}>
         <div className='flex justify-between items-center h-20 bg-whit'>
             {/* leftSide */}    
             <div className='mx-2 relative'>

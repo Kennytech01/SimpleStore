@@ -9,9 +9,9 @@ import { Product } from '../Components/Product'
     
   return (
     <div className=''> 
-        <div className='h-[100vh] group relative mt-[5rem] grid md:grid-cols-2 gap-8 mx-10'>
+        <div className=' h-[100vh] group relative mt-[5rem] grid md:grid-cols-2 lg:gap-8 gap-4 '>
             <div className='min-h-full hidden md:flex justify-center items-center '>
-                <img src={Shopping} alt="" className=' object-contain object-center border-2 border-[#781d75]/30 rounded-full p-10 w-[32rem] h-[32rem]' style={{transform: `scaleX(-1)`}}/>
+                <img src={Shopping} alt="" className=' object-contain object-center border-2 border-[#781d75]/30 rounded-full p-10 lg:w-[32rem] w-80 lg:h-[32rem] h-80' style={{transform: `scaleX(-1)`}}/>
             </div>
             <div className=' items-center justify-center min-h-full  duration-500 transition-all '>
                 <div className='bg-stone-2 rounded flex flex-col justify-center h-full '>
