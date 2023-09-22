@@ -9,14 +9,15 @@ import { Product } from '../Components/Product'
     
   return (
     <div className=''> 
-        <div className=' h-[100vh] group relative mt-[5rem] grid md:grid-cols-2 lg:gap-8 gap-4 '>
-            <div className='min-h-full hidden md:flex justify-center items-center '>
-                <img src={Shopping} alt="" className=' object-contain object-center border-2 border-[#781d75]/30 rounded-full p-10 lg:w-[32rem] w-80 lg:h-[32rem] h-80' style={{transform: `scaleX(-1)`}}/>
+        <div className=' md:h-[100vh] h-[70vh] group relative mt-[5rem]'>
+            <div className='min-h-full flex md:justify-start justify-end items-center relative md:p-10 pt-20 p-5'>
+                <div className='bg-black/20 h-full w-full absolute top-0 right-0 left-0 '></div>
+                <img src={Shopping} alt="" className=' object-cover object-center md:rounded-full p-1 lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#781d75]/30 md:border-2 md:-scale-x-100 scale-x-100' style={{transform : `saleX(-1)`}}/>
             </div>
-            <div className=' items-center justify-center min-h-full  duration-500 transition-all '>
-                <div className='bg-stone-2 rounded flex flex-col justify-center h-full mx-5'>
+            <div className="items-center justify-center min-h-full ">
+                <div className='bg-stone-2 rounded flex flex-col justify-center h-full mx-4 absolute top-0 lg:left-1/2 md:left-1/4 sm:left-10 left-2 duration-500 transition-all z-10'>
                     <p className='font-bold text-[#752d42] text-sm'>-TREND</p>
-                    <h1 className="flex flex-wrap py-5 md:text-4xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]">
+                    <h1 className="flex flex-wrap py-5 sm:text-4xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]">
                         SimpleStore sale
                         <TypeAnimation 
                             sequence={[
