@@ -43,16 +43,16 @@ import { Product } from '../Components/Product'
                     <h2 className='p-2 text-[#752d42]'>Get your order delivered at your doorsteps all day everyday</h2>
                     <span className='group-hover:cursor-pointer flex items-center decoration-4 relative underline-offset-4 duration-500 transition-all py-4 font-bold text-stone-100 text-xl'>
                         Discover More 
-                        <span className={`absolute md:h-full h-2/3 -left-2 w-10 transition-all group-hover:w-40  bg-[#781d75] -z-10 shadow-lg rounded duration-700 `}></span>
+                        <span className={`absolute md:h-3/4 h-2/3 -left-2 w-10 transition-all group-hover:w-40  bg-[#781d75] -z-10 shadow-lg rounded duration-700 `}></span>
                     </span>
                 </div>
             </div>
         </div>
-        <div className='text-center pt-10'>
+        <div className='text-center flex justify-center items-center h-20'>
             <p className='capitalize sm:text-3xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
         </div>
         {/* items */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:m-10 m-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-10 m-5'>
             {
                 items.map((product) => {
                     return (
