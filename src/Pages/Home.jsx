@@ -3,15 +3,19 @@ import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Product } from '../Components/Product'
+import { Navbar } from './Navbar'
+import { PromoDisplay } from '../Components/PromoDisplay'
 
  export const Home = () => {
     const {items} = useContext(ItemContext)
     
   return (
-    <div className=''> 
-        <div className=' md:h-[100vh] h-[70vh] group relative mt-[5rem]'>
-            <div className='min-h-full flex md:justify-start justify-end items-center relative md:p-10 pt-20 p-5'>
-                <div className='bg-black/20 h-full w-full absolute top-0 right-0 left-0 '></div>
+    <div className=''>
+        <PromoDisplay/>
+        <Navbar/>
+        <div className=' group relative bg-black/20  h-[100vh]'>
+            <div className='min-h-full flex md:justify-start justify-end items-center relative '>
+                {/* <div className='bg-black/20 h-full w-full absolute top-0 right-0 left-0 '></div> */}
                 <img src={Shopping} alt="" className=' object-cover object-center md:rounded-full p-1 lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#781d75]/30 md:border-2 md:-scale-x-100 scale-x-100' style={{transform : `saleX(-1)`}}/>
             </div>
             <div className="items-center justify-center min-h-full ">

@@ -7,6 +7,7 @@ export const CartProvider = ({children}) => {
     const [itemAmount, setItemAmount] = useState(0)
     const [isActive, setIsActive] = useState(false)
     const [total, setTotal] = useState(0)
+   
     
     // add to cart  
     const addToCart = (product,id) => {

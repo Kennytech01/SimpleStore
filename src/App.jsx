@@ -15,7 +15,7 @@ const App = () => {
     <div>
       <Router>
         <ConditionRoute>
-          <Navbar/>
+          {/* <Navbar/> */}
         </ConditionRoute>
         <Routes>
           <Route path='/' element={<Home/>}/>

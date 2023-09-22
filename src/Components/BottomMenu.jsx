@@ -31,7 +31,7 @@ export const BottomMenu = () => {
                                 <div className='h-20 mx-2 flex items-center justify-between border-b relative'>
                                     <p className='p-2 flex items-center'>
                                         <span className='font-bold text-xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>Shopping Cart</span>
-                                        <LuBaggageClaim size={20} className='ml-2 text-[#781d75]'/>
+                                        <LuBaggageClaim size={20} className='ml-2 text-[#781d75t]'/>
                                     </p>
                                     <p onClick={clickMobile} className=' flex items-end justify-end p-2 '><LiaTimesSolid size={30} /></p>
                                 </div>
