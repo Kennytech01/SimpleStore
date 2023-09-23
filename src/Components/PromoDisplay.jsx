@@ -3,8 +3,8 @@ import { TypeAnimation } from 'react-type-animation'
 
 export const PromoDisplay = () => {
   return (
-    <div className='flex justify-center items-center h-10 mx-10'>
-        <div className='flex text-[#781d75] font-bold text-2xl'>
+    <div className='flex justify-center items-center h-10 bg-[#781d75] text-stone-200'>
+        <div className='flex text-xl'>
             <TypeAnimation 
                 sequence={[
                     'Welcome to SimpleStore',

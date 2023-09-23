@@ -16,7 +16,7 @@ export const SidepriceTag = () => {
     <div>
       {
         isOpen ? (
-            <div  className='w-full  sm:w-2/3 md:w-1/2 h-full fixed  shadow-lg right-0 md:-right-0 top-0 z-[999] duration-200 transition-all'>
+            <div  className='w-full  sm:w-2/3 md:w-1/3 h-full fixed  shadow-lg right-0 md:-right-0 top-0 z-[999] duration-200 transition-all'>
               <div onClick={handleClose} className='bg-black/70  fixed top-0 left-0 right-0 h-full w-full duration-500 transition-all'></div>
               <div className='bg-white relative shadow-lg h-full rounded'>
                 <div className='h-20 mx-2 flex items-center justify-between border-b relative'>
@@ -60,7 +60,7 @@ export const SidepriceTag = () => {
             </div>
             )
             : (
-          <div onClick={handleClose} className='fixed top-1/2 md:right-0 -right-40 transition-all duration-300 bg-[#781d75] h-20 w-auto text-stone-100 font-bold px-1 flex flex-col justify-around items-center shadow'>
+          <div onClick={handleClose} className='fixed top-1/2 md:right-0 -right-40 transition-all duration-2h00 bg-[#781d75] h-20 w-auto text-stone-100 font-bold px-1 flex flex-col justify-around items-center shadow'>
             <p className='flex items-center text-sm w-full'>
                 {itemAmount > 1 ? itemAmount + ' items' : itemAmount + ' item'}
                 <LuBaggageClaim className='mr-1'/>

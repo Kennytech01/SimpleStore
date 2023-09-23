@@ -13,12 +13,11 @@ import { PromoDisplay } from '../Components/PromoDisplay'
     <div className=''>
         <PromoDisplay/>
         <Navbar/>
-        <div className=' group relative bg-black/20  h-[100vh]'>
-            <div className='min-h-full flex md:justify-start justify-end items-center relative '>
-                {/* <div className='bg-black/20 h-full w-full absolute top-0 right-0 left-0 '></div> */}
+        <div className=' group relative bg-black/20  max-h-[100vh] '>
+            <div className='min-h-full flex md:justify-start justify-end items-center relative p-5'>
                 <img src={Shopping} alt="" className=' object-cover object-center md:rounded-full p-1 lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#781d75]/30 md:border-2 md:-scale-x-100 scale-x-100' style={{transform : `saleX(-1)`}}/>
             </div>
-            <div className="items-center justify-center min-h-full ">
+            <div className="items-center justify-center h-full ">
                 <div className='bg-stone-2 rounded flex flex-col justify-center h-full mx-4 absolute top-0 lg:left-1/2 md:left-1/4 sm:left-10 left-2 duration-500 transition-all z-10'>
                     <p className='font-bold text-[#752d42] text-sm'>-TREND</p>
                     <h1 className="flex flex-wrap py-5 sm:text-4xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]">
@@ -56,7 +55,7 @@ import { PromoDisplay } from '../Components/PromoDisplay'
             <p className='capitalize sm:text-3xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
         </div>
         {/* items */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-10 m-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-10 m-5 h-full'>
             {
                 items.map((product) => {
                     return (

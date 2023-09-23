@@ -67,7 +67,7 @@ export const BottomMenu = () => {
                 <LuHome size={20} className='cursor-pointer'/>
             </div>
             <div className='relative -z-10'>
-                <span className='bg-red-500 absolute -top-3 text-sm p-2 right-0 text-stone-50 rounded-full w-4 h-5 flex items-center justify-center'>{itemAmount}</span>
+                <span className='bg-red-500 absolute -top-3 text-sm p-2 -right-1 shadow-lg text-stone-50 rounded-full w-5 h-5 flex items-center justify-center'>{itemAmount}</span>
                 <LuShoppingBag onClick={handleClose} size={20} className='cursor-pointer'/>
             </div>
             <NavLink to={`/signin`}>

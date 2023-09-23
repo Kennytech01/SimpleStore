@@ -6,13 +6,13 @@ export const ItemProvider = ({children}) => {
     const [items, setItems] = useState([])
     const [toggle, setToggle] = useState(false)
     const [popUP, setPopUp] = useState([])
-   
+  //  console.log(items)
   useEffect(()=>{
     const body = document.querySelector('body');
     body.style.overflow = toggle? 'hidden' : 'auto';
   }, [toggle])
 
-    const handleClick = (product) => {
+    const handleClick = () => {
       setToggle(!toggle)
       setPopUp([product])
     }
