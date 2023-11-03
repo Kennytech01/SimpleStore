@@ -3,6 +3,19 @@ import { Link } from 'react-router-dom'
 import {MdKeyboardDoubleArrowLeft} from 'react-icons/md'
 
 export const SignIn = () => {
+
+    const verify = () => {
+        const email = 'Victorybenson98@gmail.com';
+        const Email = document.getElementById('Email').value;
+
+            if(Email == email){
+                alert('Welcome back')
+            }else{
+                alert('check the email and try again')
+        }
+        // return verify()
+    }
+    
   return (
     <div className='flex  justify-center items-center h-[100vh]'>
         <div className='md:w-1/3 sm:w-2/3 w-[90%] mx-1/2'>
@@ -19,15 +32,15 @@ export const SignIn = () => {
                 <h1 className='font-bold text-xl p-5 text-cente'>Welcome Back!</h1>
                 <h4 className='sign text-lg p-2 text-center '>Sign in into your account for full access</h4>
                 <div className='mx-5'>
-                <form action="" method="post" >
-                    <div className='p-2'>
-                        <input type="email" name="" id="" autoFocus className='w-full border p-3 px-3 rounded-full outline-none' placeholder='Your email address' />
-                    </div>
-                    <div className='p-3 flex justify-center  '>
-                        <button type="submit" value='submit' className='submit w-full p-3 font-semibold rounded-full hover:scale-95 ease-out duration-500 bg-[#781d75] text-stone-100 '>Send login link</button>
-                    </div>
-                </form>
-            </div>
+                    <form action="" method="post" >
+                        <div className='p-2'>
+                            <input type="email" name="" required id="Email" autoFocus className=' w-full border p-3 px-3 rounded-full outline-none' placeholder='Your email address' />
+                        </div>
+                        <div  className='p-3 flex justify-center'>
+                            <button type="submit" value='submit' onClick={()=>verify()} className='submit w-full p-3 font-semibold rounded-full hover:scale-95 ease-out duration-500 bg-[#781d75] text-stone-100 '>Send login link</button>
+                        </div>
+                    </form>
+                </div>
                 <p className='p-5'>
                     Already have an account? <Link to='/signup' className='hover:underline text-[#781d75] font-bold'>signUp</Link>
                 </p>

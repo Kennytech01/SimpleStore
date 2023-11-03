@@ -30,8 +30,8 @@ export const Navbar = () => {
    
  
   return (
-    <div className={`${isActive ? 'sticky top-0' : 'mx-10 m'} z-40 transition-all duration-500 shadow border`}>
-        <div className={`${isActive? 'bg-[#e2d9e1]' : ''} flex justify-between items-center h-20 transition-all`}>
+    <div >
+        <div className={`${isActive ? 'sticky top-0  z-10' : 'bg-white '} flex justify-between items-center h-20 px-10  shadow-inner text-stone-800`}>
             {/* leftSide */}   
             <div className='mx-2 relative flex'>
                 <p className={`${isActive? 'bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} font-bold text-3xl  text-center`}>SimpleStore</p>

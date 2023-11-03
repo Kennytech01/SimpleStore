@@ -4,17 +4,15 @@ import Shopping from '../assets/images/Shopping.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Product } from '../Components/Product'
 import { Navbar } from './Navbar'
-import { PromoDisplay } from '../Components/PromoDisplay'
+// import { PromoDisplay } from '../Components/PromoDisplay'
 
  export const Home = () => {
     const {items} = useContext(ItemContext)
     
   return (
     <div className=''>
-        <PromoDisplay/>
-        <Navbar/>
-        <div className=' group relative bg-black/20  max-h-[100vh] '>
-            <div className='min-h-full flex md:justify-start justify-end items-center relative p-5'>
+        <div className=' group relative  max-h-[100vh] '>
+            <div className='min-h-full flex md:justify-start justify-end items-center relative p-5 blur-sm md:blur-none'>
                 <img src={Shopping} alt="" className=' object-cover object-center md:rounded-full p-1 lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#781d75]/30 md:border-2 md:-scale-x-100 scale-x-100' style={{transform : `saleX(-1)`}}/>
             </div>
             <div className="items-center justify-center h-full ">
@@ -55,7 +53,7 @@ import { PromoDisplay } from '../Components/PromoDisplay'
             <p className='capitalize sm:text-3xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
         </div>
         {/* items */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-10 m-5 h-full'>
+        <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-10 m-5 h-full'>
             {
                 items.map((product) => {
                     return (

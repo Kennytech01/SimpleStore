@@ -5,17 +5,14 @@ export const ConditionRoute = ({children}) => {
     const location = useLocation(false)
     const [showNav, setShowNav] = useState()
 
-    useEffect(() => {
-    //   console.log(`this is location`, location)
-    
-    if (location.pathname === '/signin') {
+    useEffect(() => {    
+      if (location.pathname === '/signin') {
         setShowNav(false)
-    }else if (location.pathname === '/signup') {
+      }else if (location.pathname === '/signup') {
         setShowNav(false)
-    }else{
+      }else{
         setShowNav(true)
-    }
-
+      }
     }, [location])
     
   return (
