@@ -4,7 +4,7 @@ import Shopping from '../assets/images/Shopping.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Product } from '../Components/Product'
 import { Navbar } from './Navbar'
-// import { PromoDisplay } from '../Components/PromoDisplay'
+
 
  export const Home = () => {
     const {items} = useContext(ItemContext)

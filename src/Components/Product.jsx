@@ -1,14 +1,11 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { CartContext } from '../contexts/CartContext'
-import { ItemContext } from '../contexts/ItemContext'
-import {FaTimes} from 'react-icons/fa'
-import {LiaPlusSolid, LiaStar} from 'react-icons/lia'
+import {LiaPlusSolid} from 'react-icons/lia'
 import { Link } from 'react-router-dom'
 
 export const Product = ({product}) => {
-    const {id, title, discountPercentage,price, brand, thumbnail, description} = product
+    const {id, title, discountPercentage,price, brand, thumbnail} = product
     const {addToCart} = useContext(CartContext)
-    const { handleClick,} = useContext(ItemContext)
 
 return (
     <div  className='rounded h-96 flex flex-col justify-between sm:p-4 p-1 bg-white shadow'>
