@@ -23,12 +23,12 @@ export const ProductDetail = () => {
     const {title, thumbnail, description, price, discountPercentage, brand, category} = product  
 
   return (
-    <div className='m-auto flex flex-col h-screen justify-center items-center'>
-        <Link to={`/`} className='bg-white rounded-full p-5 m-3 flex self-start border items-center hover:opacity-60 transition-all'>
+    <div className='m-auto flex flex-col h-screen justify-center items-center transition-all'>
+        <Link to={`/`} className='bg-white rounded-full md:p-5 p-3 m-3 mt-40 md:mt-2 flex self-start border items-center hover:opacity-60 transition-all'>
             <span className='font-light text-xl px-1 capitalize'>continue shopping</span>
             <IoArrowUndoOutline size={30} />
         </Link>
-        <div className='grid md:grid-cols-2 grid-cols-1 border rounded mx-20 py-5 shadow'>
+        <div className='grid md:grid-cols-2 grid-cols-1 border rounded mx:mx-20 mx-5 py-5 shadow'>
             <div className='flex items-center justify-center h-96 m-2'>
                 <img src={thumbnail} alt="" className='p-2 w-full h-full object-contain rounded-lg ' />
             </div>
@@ -40,7 +40,7 @@ export const ProductDetail = () => {
                     <span className='font-bold text-stone-500'>{discountPercentage}%</span>
                 </p>
                 <p onClick={()=> addToCart(product, product.id)} className='flex justify-center items-center p-3 bg-[#781d75] rounded shadow-lg hover:opacity-80 transition-all w-full'>
-                    <button className='uppercase button p-2 text-white font-bold'>
+                    <button className='uppercase button p-2 text-white font-bold '>
                         add to cart
                     </button>
                 </p>

@@ -4,7 +4,7 @@ import {LiaPlusSolid} from 'react-icons/lia'
 import { Link } from 'react-router-dom'
 
 export const Product = ({product}) => {
-    const {id, title, discountPercentage,price, brand, thumbnail} = product
+    const {id, title, discountPercentage, price, brand, thumbnail} = product
     const {addToCart} = useContext(CartContext)
 
 return (
