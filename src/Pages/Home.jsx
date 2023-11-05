@@ -12,7 +12,7 @@ import {BsEmojiSunglasses} from 'react-icons/bs'
   return (
     <div className=''>
         <div className=' group relative  max-h-[100vh] '>
-            <div className='min-h-full flex md:justify-start justify-end items-center relative p-5 blur-sm md:blur-none'>
+            <div className='min-h-full flex md:justify-start justify-end items-center relative p-5 blur-s md:blur-non'>
                 <img src={Shopping} alt="" className=' object-cover object-center md:rounded-full p-1 lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#781d75]/30 md:border-2 md:-scale-x-100 scale-x-100 ' style={{transform : `saleX(-1)`}}/>
             </div>
             <div className="items-center justify-center h-full ">
