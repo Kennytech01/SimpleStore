@@ -3,7 +3,7 @@ import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Product } from '../Components/Product'
-import { Navbar } from './Navbar'
+import {FaShopify} from 'react-icons/fa'
 
 
  export const Home = () => {
@@ -50,7 +50,10 @@ import { Navbar } from './Navbar'
             </div>
         </div>
         <div className='text-center flex justify-center items-center h-20'>
-            <p className='capitalize sm:text-3xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>pick what you want!</p>
+            <p className='capitalize flex items-center sm:text-3xl text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>
+                Shop Big Save Bigger!...
+                <FaShopify className='text-stone-700 ml-1'/>
+            </p>
         </div>
         {/* items */}
         <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-10 m-5 h-full'>

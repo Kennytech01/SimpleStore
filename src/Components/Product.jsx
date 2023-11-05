@@ -10,7 +10,7 @@ export const Product = ({product}) => {
 return (
     <div  className='rounded h-96 flex flex-col justify-between sm:p-4 p-1 bg-white shadow'>
         <Link to={`/productdetail/${product,id}`} c className='h-4/5 flex group flex-col justify-center'>
-            <span className='flex text-sm justify-end font-bold  bg-gradient-to-tr from-[#781d75] to-[#EC094D] bg-clip-text text-transparent p-1 rounded'>-{discountPercentage}%</span>
+            <span className='flex text-sm justify-end font-bold  bg-gradient-to-tr from-[#781d75] to-[#EC094D] bg-clip-text text-transparent p-1 rounded'>{discountPercentage}% off</span>
             <div className='h-1/2 flex justify-center items-center'>
                 <img src={thumbnail} alt="" className='h-full w-ful object-top hover:scale-110 duration-500 transition-all rounded '/>
             </div>
