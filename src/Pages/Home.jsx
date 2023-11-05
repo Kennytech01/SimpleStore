@@ -1,7 +1,6 @@
 import React, { useContext} from 'react'
 import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.png'
-import { TypeAnimation } from 'react-type-animation'
 import { Product } from '../Components/Product'
 import {BsEmojiSunglasses} from 'react-icons/bs'
 

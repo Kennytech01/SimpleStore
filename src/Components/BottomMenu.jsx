@@ -1,21 +1,26 @@
-import React, {useContext} from 'react'
-import { SidepriceTag } from './SidepriceTag'
-import {LuShoppingBag, LuSearch, LuHome, LuUser,LuBaggageClaim} from 'react-icons/lu'
-import {LiaTimesSolid} from 'react-icons/lia'
+import React, {useContext, useEffect} from 'react'
+import { LuUser, LuHome} from 'react-icons/lu'
 import {HiMiniBars3BottomLeft} from 'react-icons/hi2'
-import { motion } from 'framer-motion'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Home } from '../Pages/Home'
 import { SidebarContext } from '../contexts/SidebarContext'
 import { SignIn } from './SignIn'
 import { SignUp } from './SignUp'
-import { CartContext } from '../contexts/CartContext'
+import { FaShopify } from 'react-icons/fa'
+import AOS from 'aos'
+import "aos/dist/aos.css"
+import {IoArrowUndoOutline} from 'react-icons/io5'
 
 
 export const BottomMenu = () => {
-  const {mobile, clickMobile, handleClose} = useContext(SidebarContext)
-  const {itemAmount} = useContext(CartContext)
+  const {mobile, clickMobile,} = useContext(SidebarContext)
+
   
+  useEffect(() => {
+    AOS.init({
+      duration: 1000
+    })    
+  },[])
 
   return (
     <div>
@@ -25,15 +30,16 @@ export const BottomMenu = () => {
                 <HiMiniBars3BottomLeft size={20} onClick={clickMobile} className='cursor-pointer'/>
                 {
                     mobile && (
-                        <div  className='sm:w-2/4 w-3/4  fixed  shadow-lg left-0 md:-left-0 top-0 h-full duration-500 transition-all'>
-                            <div onClick={clickMobile} className='bg-black/70  fixed top-0 left-0 right-0 h-full w-full duration-500 transition-all'></div>  
+                        <div>
+                            <div onClick={clickMobile} className='bg-black/70 backdrop-blur fixed top-0 left-0 right-0 h-full w-full transition-all z-10'></div>
+                            <div data-aos="fade-right" className='sm:w-2/4 w-full  fixed z-10 shadow-lg left-0 md:-left-0 top-0 h-full duration-500 transition-all'>  
                             <div className='relative bg-white h-full'>
                                 <div className='h-20 mx-2 flex items-center justify-between border-b relative'>
                                     <p className='p-2 flex items-center'>
-                                        <span className='font-bold text-xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>Shopping Cart</span>
-                                        <LuBaggageClaim size={20} className='ml-2 text-[#781d75t]'/>
+                                        <span className='font-bold text-2xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</span>
+                                        <FaShopify size={30} className='ml-2 text-[#781d75]'/>
                                     </p>
-                                    <p onClick={clickMobile} className=' flex items-end justify-end p-2 '><LiaTimesSolid size={30} /></p>
+                                    <p onClick={clickMobile} className=' flex items-end justify-end p-2 text-stone-700 '><IoArrowUndoOutline size={30} /></p>
                                 </div>
                                 <ul className='p-5 sm:px-10  px-5'>
                                     <NavLink to = '/' element={<Home/>} onClick={clickMobile} className= "hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
@@ -57,24 +63,19 @@ export const BottomMenu = () => {
                                 </ul>
                             </div>
                         </div>
+                        </div>
                     )
                 }
             </div>
-            <div>
-                <LuSearch size={20} className='cursor-pointer'/>
-            </div>
-            <div>
+            <Link to='/' className='flex items-center flex-col font-bold text-stone-700'>
                 <LuHome size={20} className='cursor-pointer'/>
-            </div>
-            <div className='relative -z-10'>
-                <span className='bg-red-500 absolute -top-3 text-sm p-2 -right-1 shadow-lg text-stone-50 rounded-full w-5 h-5 flex items-center justify-center'>{itemAmount}</span>
-                <LuShoppingBag onClick={handleClose} size={20} className='cursor-pointer'/>
-            </div>
-            <NavLink to={`/signin`}>
+                Home
+            </Link>
+            <Link to={`/signin`} className='flex items-center flex-col font-bold text-stone-700'>
                 <LuUser className='cursor-pointer' />
-            </NavLink>
+                Account
+            </Link>
        </div>
-       <SidepriceTag/>
     </div>
   )
 }
