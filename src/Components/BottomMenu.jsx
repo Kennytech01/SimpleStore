@@ -3,8 +3,6 @@ import { LuUser, LuHome} from 'react-icons/lu'
 import {HiMiniBars3BottomLeft} from 'react-icons/hi2'
 import { Link,} from 'react-router-dom'
 import { SidebarContext } from '../contexts/SidebarContext'
-import { SignIn } from './SignIn'
-import { SignUp } from './SignUp'
 import { FaShopify } from 'react-icons/fa'
 import AOS from 'aos'
 import "aos/dist/aos.css"
