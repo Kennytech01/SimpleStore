@@ -13,7 +13,7 @@ import { ProductDetail } from './Pages/ProductDetail'
 import { PromoDisplay } from './Components/PromoDisplay'
 import {Shop} from './Pages/Shop'
 import { ToastContainer} from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
