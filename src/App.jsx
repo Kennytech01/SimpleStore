@@ -11,6 +11,7 @@ import { AdminDashboard } from './Components/AdminDashboard'
 import { ProtectedRoute } from './Components/ProtectedRoute'
 import { ProductDetail } from './Pages/ProductDetail'
 import { PromoDisplay } from './Components/PromoDisplay'
+import {Shop} from './Pages/Shop'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/' element={<Home/>}/>
           <Route path='/signin' element={<SignIn/>}/>
           <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/shop' element={<Shop/>} />
           <Route path='/productdetail/:id' element={<ProductDetail/>}/>
           <Route path='/admindashboard' element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
         </Routes>

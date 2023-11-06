@@ -38,9 +38,9 @@ export const Navbar = () => {
         {/* right-Side */}
         <div className={`${isActive? 'text-stone-100' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} md:flex items-center sm:px-5 px-2 font-bold`} >
             <div onClick={handleCart} className= "cursor-pointer relative hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
-                <span className='bg-red-500 absolute -top-[0.2rem] shadow-lg text-sm p-2 right-1 text-stone-50 rounded-full w-5 h-5 flex items-center justify-center'>{itemAmount}</span>
+                <span className={` text-white bg-red-500 absolute -top-[0.2rem] shadow-lg text-sm p-2 right-1  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
                 <span className='flex items-center px-3   py-2 rounded-lg '>
-                    Cart
+                    <span >Cart</span>
                     <FaShopify  size={20} className={ ` ${isActive && 'text-stone-100'}  text-[#781d75] mx-2`}/>
                  </span>
             </div>
