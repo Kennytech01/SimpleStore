@@ -1,5 +1,5 @@
 import React,{createContext, useState, useEffect} from 'react'
-
+import { toast } from 'react-toastify'
 export const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
@@ -25,9 +25,10 @@ export const CartProvider = ({children}) => {
             return item
           }
         });
-        setCart(newCart) 
+        setCart(newCart)
        } else {
          setCart([...cart, newItem])
+         toast.success('Product has been added to Cart', {position: 'top-left'})
        }
     };
     

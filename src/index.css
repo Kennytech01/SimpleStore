@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 
 /*No scrollBar?. add the code bellow */
 @layer utilities {
@@ -16,6 +18,9 @@
           scrollbar-width: none;  /* Firefox */
       }
     }
-  }
+  };
 
- 
+ #welcome {
+  /* font-family: Great Vibes, cursive */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
