@@ -33,7 +33,7 @@ import {BsCartPlus} from 'react-icons/bs'
             </div>
         </div>
         <div className='text-center flex justify-center items-center h-20'>
-            <p className='capitalize flex items-center sm:text-3xl text-xl bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>
+            <p className='flex capitalize items-center sm:text-3xl text-xl bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D] '>
                 Shop Big Save BIGGER!...
                 <FaShopify size={40} className='ml-2 text-[#781d75]'/>
             </p>

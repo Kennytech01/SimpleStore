@@ -21,7 +21,7 @@ export const BottomMenu = () => {
 
   return (
     <div>
-        <div className='h-16 z-[999] bg-white md:-bottom-28 bottom-0 fixed w-full transition-all duration-500 flex items-center justify-around'>
+        <div className='h-16 z-[99] bg-white md:-bottom-28 bottom-0 fixed w-full transition-all duration-500 flex items-center justify-around'>
             {/* mobile */}
             <div className='flex flex-cols md:hidden px-3'>
                 <HiMiniBars3BottomLeft size={20} onClick={clickMobile} className='cursor-pointer'/>
