@@ -32,16 +32,16 @@ export const Navbar = () => {
             <p className={`${isActive? 'text-stone-100 ' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} font-bold text-3xl md:text-4xl text-center`}>SimpleStore</p>
         </div>
         <div className={`h-1/2 w-96  top-0 rounded bg-stone-100 flex items-center relative `}>
-            <LuSearch className='bg-stone-white absolute left-3 top-1/3'/>
-            <input type="search" name="search" id="" placeholder=' Search on Simplestore...' className='text-stone-500  w-full h-full px-2 pl-7 rounded outline-none transition-all duration-1000' />
+            <LuSearch className='bg-stone-white absolute left-3 top-1/3 '/>
+            <input type="search" name="search" id="" placeholder=' Search on Simplestore...' className='text-stone-500  w-full h-full px-2 pl-8 rounded outline-none transition-all duration-1000' />
         </div>
         {/* right-Side */}
         <div className={`${isActive? 'text-stone-100' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} md:flex items-center sm:px-5 px-2 font-bold`} >
             <div onClick={handleCart} className= "cursor-pointer relative hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
                 <span className={` text-white bg-red-500 absolute -top-[0.2rem] shadow-lg text-sm p-2 right-1  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
-                <span className='flex items-center px-3   py-2 rounded-lg '>
+                <span className={ ` ${isActive && 'text-stone-100'}  text-[#781d75] flex items-center px-3 py-2 rounded-lg`}>
                     <span >Cart</span>
-                    <FaShopify  size={20} className={ ` ${isActive && 'text-stone-100'}  text-[#781d75] mx-2`}/>
+                    <FaShopify  size={20} className='mx-2'/>
                  </span>
             </div>
             <Link to = '/signin' className= "hidden md:flex hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
