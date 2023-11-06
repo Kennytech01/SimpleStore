@@ -36,7 +36,7 @@ const App = () => {
           <Footer/>
         </ConditionRoute>
       </Router>
-      <ToastContainer/>
+      <ToastContainer autoClose={1000}/>
     </div>
   )
 }

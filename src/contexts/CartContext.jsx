@@ -28,7 +28,7 @@ export const CartProvider = ({children}) => {
         setCart(newCart)
        } else {
          setCart([...cart, newItem])
-         toast.success('Product has been added to Cart', {position: 'top-left', size: '20'})
+         toast.success('Product has been added to Cart', {position: 'bottom-left'}, {autoClose: 1000})
        }
     };
     
