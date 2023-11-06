@@ -13,7 +13,7 @@ import {IoArrowUndoOutline} from 'react-icons/io5'
 
 
 export const BottomMenu = () => {
-  const {mobile, clickMobile,} = useContext(SidebarContext)
+  const {mobile, clickMobile, handleClose} = useContext(SidebarContext)
 
   
   useEffect(() => {
@@ -27,7 +27,7 @@ export const BottomMenu = () => {
         <div className='h-16 z-[999] bg-white md:-bottom-28 bottom-0 fixed w-full transition-all duration-500 flex items-center justify-around'>
             {/* mobile */}
             <div className='flex flex-cols md:hidden px-3'>
-                <HiMiniBars3BottomLeft size={20} onClick={clickMobile} className='cursor-pointer'/>
+                <HiMiniBars3BottomLeft size={20} onClick={handleClose} className='cursor-pointer'/>
                 {
                     mobile && (
                         <div>

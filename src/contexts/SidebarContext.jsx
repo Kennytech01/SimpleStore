@@ -10,7 +10,7 @@ export const SidebarProvider = ({children}) => {
         setMobile(!mobile)
     }
 
-    const handleClose = () =>{
+    const handleCart = () =>{
         setIsOpen(!isOpen)
     }
 
@@ -25,7 +25,7 @@ export const SidebarProvider = ({children}) => {
   }, [mobile])
 
   return (
-    <SidebarContext.Provider value={{mobile, clickMobile, handleClose, isOpen}}>
+    <SidebarContext.Provider value={{mobile, clickMobile, handleCart, isOpen}}>
         {children}
     </SidebarContext.Provider>
   )

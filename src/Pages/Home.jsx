@@ -3,6 +3,7 @@ import { ItemContext } from '../contexts/ItemContext'
 import Shopping from '../assets/images/Shopping.png'
 import { Product } from '../Components/Product'
 import {BsEmojiSunglasses} from 'react-icons/bs'
+import { SidepriceTag } from '../Components/SidepriceTag'
 
 
  export const Home = () => {
@@ -44,6 +45,7 @@ import {BsEmojiSunglasses} from 'react-icons/bs'
                 })
             }
         </div>
+        <SidepriceTag/>
     </div>
   )
 }
