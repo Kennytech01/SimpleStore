@@ -41,7 +41,7 @@ export const Navbar = () => {
                 <span className={` text-white bg-red-500 absolute -top-[0.2rem] shadow-lg text-sm p-2 right-1  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
                 <span className={ ` ${isActive && 'text-stone-100'}  text-[#781d75] flex items-center px-3 py-2 rounded-lg`}>
                     <span >Cart</span>
-                    <FaShopify  size={20} className='mx-2'/>
+                    <FaShopify  size={20} className='m-1'/>
                  </span>
             </div>
             <Link to = '/signin' className= "hidden md:flex hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
