@@ -19,7 +19,7 @@ import {TbFaceIdError} from 'react-icons/tb'
 
     if(!SearchResult.length) {
         return ( 
-            <div className='text-center py-10  text-stone-600 font-bold text-2xl h-screen flex justify-center items-center '>
+            <div className='text-center py-10  text-stone-600 font-bold text-2xl max-h-screen flex justify-center items-center '>
                 <span className='flex items-center'>
                     <TbFaceIdError size={40} className='mx-1 text-[#781d75] '/>
                     No Match Found!
