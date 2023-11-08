@@ -33,7 +33,7 @@ export const SidepriceTag = () => {
      { 
         isOpen && (
         <div>
-          <div onClick={handleCart} className='bg-black/70 backdrop-blur fixed top-0 left-0 right-0 h-full w-full transition-all z-10'></div>
+          <div onClick={handleCart} className='bg-black/70 backdrop-blur fixed top-0 left-0 right-0 h-full w-full transition-all z-[999]'></div>
           <div data-aos="fade-left" className='w-full text-stone-700  sm:w-2/3 md:w-1/3 h-full fixed  shadow-lg right-0 md:-right-0 top-0 z-[999] duration-200 transition-all'>
             <div className='bg-white relative shadow-lg h-full rounded'>
               <div className='h-20 mx-2 flex items-center justify-between border-b relative'>

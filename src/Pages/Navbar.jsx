@@ -6,12 +6,16 @@ import {TfiHelpAlt} from 'react-icons/tfi'
 import { SidebarContext } from '../contexts/SidebarContext'
 import { FaShopify } from 'react-icons/fa'
 import { LuSearch} from 'react-icons/lu'
+import { useNavigate } from "react-router-dom";
+import { ItemContext } from '../contexts/ItemContext'
+import {FcShop} from 'react-icons/fc'
 
 export const Navbar = () => {
-   const {isActive, setIsActive } = useContext(CartContext)
-   const [dropDown, setDropDown] = useState(false)
-   const {handleCart} = useContext(SidebarContext)
-   const {itemAmount} = useContext(CartContext)
+    const {isActive, setIsActive } = useContext(CartContext)
+    const [dropDown, setDropDown] = useState(false)
+    const {handleCart} = useContext(SidebarContext)
+    const {itemAmount} = useContext(CartContext)
+    const {searchItem, setSearchItem} = useContext(ItemContext)
 
 
    const handleDrop = () => {
@@ -25,15 +29,25 @@ export const Navbar = () => {
         });
       })
 
-  return (
-    <div className={`${isActive ? 'fixed w-full top-0 bg-[#781d75] z-[999] ' : 'bg-stone-100 '} transition-all flex justify-between items-center h-20 md:px-10 px-2  shadow text-stone-800 `}>
+   return (
+    <div className={`${isActive ? 'fixed w-full top-0 bg-[#781d75] z-[99] ' : 'bg-stone-100 '} transition-all flex justify-between items-center h-20 md:px-10 px-2  shadow text-stone-800 `}>
         {/* leftSide */}   
         <div className='mx-2 relative hidden lg:flex'>
-            <p className={`${isActive? 'text-stone-100 ' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} font-bold text-3xl md:text-4xl text-center`}>SimpleStore</p>
+            <p className={`${isActive? 'text-stone-100 ' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} font-bold text-3xl md:text-4xl text-center flex items-center`}>
+                SimpleStore
+                <FcShop/>
+            </p>
         </div>
-        <div className={`h-1/2 w-96  top-0 rounded bg-stone-100 flex items-center relative `}>
-            <LuSearch className='bg-stone-white absolute left-3 top-1/3 '/>
-            <input type="search" name="search" id="" placeholder=' Search on Simplestore...' className='text-stone-500  w-full h-full px-2 pl-8 rounded outline-none transition-all duration-1000' />
+        <div className={`h-1/2 w-96  top-0 rounded bg-white flex items-center relative `}>
+            <LuSearch className='bg-stone-white mx-2'/>
+            <input 
+                type="search" 
+                name="search"
+                value={searchItem}
+                onChange={(e)=> setSearchItem(e.target.value)}
+                placeholder=' Search on Simplestore...' 
+                className='text-stone-500  w-full h-full font-semibold rounded outline-none transition-all duration-1000'
+            />
         </div>
         {/* right-Side */}
         <div className={`${isActive? 'text-stone-100' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} md:flex items-center sm:px-5 px-2 font-bold`} >

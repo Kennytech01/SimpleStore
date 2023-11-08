@@ -6,6 +6,7 @@ export const ItemProvider = ({children}) => {
   const [items, setItems] = useState([])
   const [toggle, setToggle] = useState(false)
   const [popUP, setPopUp] = useState([])
+  const [searchItem, setSearchItem] = useState('')
   
 
 
@@ -21,15 +22,17 @@ export const ItemProvider = ({children}) => {
 
     useEffect(() => {
       const getProducts = async () => {
-        const response = await fetch('https://dummyjson.com/products')  // fetch the products
-        const data = await response.json() // convert the response to json
-        setItems(data.products) // set the products in the state to the products we fetched
+        const response = await fetch('https://dummyjson.com/products') 
+        const data = await response.json() 
+        setItems(data.products) 
       }
       getProducts()
     }, [])
+
+
            
   return (
-    <ItemContext.Provider value={{items, toggle, popUP, handleClick}}>   
+    <ItemContext.Provider value={{items, toggle, popUP, handleClick, searchItem, setSearchItem}}>   
         {children}  
     </ItemContext.Provider>
   )

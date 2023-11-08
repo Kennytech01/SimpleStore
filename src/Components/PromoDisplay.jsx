@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation'
 
 export const PromoDisplay = () => {
   return (
-    <div className='flex justify-center items-center h-10 bg-[#d7c98a] text-stone-200'>
+    <div className='flex justify-center items-center h-10 bg-[#781d5] text-[#781d75]'>
         <div className='flex text-xl'>
             <TypeAnimation 
                 sequence={[
