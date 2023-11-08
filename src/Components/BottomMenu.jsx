@@ -3,7 +3,7 @@ import { LuUser, LuHome} from 'react-icons/lu'
 import {HiMiniBars3BottomLeft} from 'react-icons/hi2'
 import { Link,} from 'react-router-dom'
 import { SidebarContext } from '../contexts/SidebarContext'
-import { FaShopify } from 'react-icons/fa'
+import { FcShop } from 'react-icons/fc'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import {IoArrowUndoOutline} from 'react-icons/io5'
@@ -33,8 +33,8 @@ export const BottomMenu = () => {
                             <div className='relative bg-white h-full'>
                                 <div className='h-20 mx-2 flex items-center justify-between border-b relative'>
                                     <p className='p-2 flex items-center'>
-                                        <span className='font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</span>
-                                        <FaShopify size={40} className='ml-2 text-[#781d75]'/>
+                                        <span className='font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] via-[#fb923c] text-center'>SimpleStore</span>
+                                        <FcShop size={40} className='ml-2 text-[#781d75]'/>
                                     </p>
                                     <p onClick={clickMobile} className=' flex items-end justify-end p-2 text-stone-700 '><IoArrowUndoOutline size={30} /></p>
                                 </div>

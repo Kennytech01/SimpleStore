@@ -4,7 +4,7 @@ import {LuPhoneCall} from 'react-icons/lu'
 
 export const Footer = () => {
   return (
-    <div className=' text-white shadow-inner bg-[#591757] flex justify-center items-center mt-32'>
+    <div className=' text-white shadow-inner bg-[#591757 bg-black flex justify-center items-center mt-32'>
         <div className='flex flex-wrap items-center justify-between m-3 mb-20 md:mb-0 w-full'>
             {/* follow us  */}
             <div className='flex flex-col items-start justify-center m-2'>

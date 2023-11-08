@@ -33,7 +33,7 @@ export const Navbar = () => {
     <div className={`${isActive ? 'fixed w-full top-0 bg-[#781d75] z-[99] ' : 'bg-stone-100 '} transition-all flex justify-between items-center h-20 md:px-10 px-2  shadow text-stone-800 `}>
         {/* leftSide */}   
         <div className='mx-2 relative hidden lg:flex'>
-            <p className={`${isActive? 'text-stone-100 ' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} font-bold text-3xl md:text-4xl text-center flex items-center`}>
+            <p className={`${isActive? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' : 'bg-gradient-to-tr bg-clip-text text-transparent to-[#781d75] via-[#fb923c] from-[#EC094D]'} font-bold text-3xl md:text-4xl text-center flex items-center`}>
                 SimpleStore
                 <FcShop/>
             </p>
