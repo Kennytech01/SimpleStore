@@ -20,13 +20,15 @@ export const ProductDetail = () => {
         )
     }
 
-    const {title, thumbnail, description, price, discountPercentage, brand, category} = product  
+    const {title, thumbnail, description, price, discountPercentage,stock, brand, category} = product  
 
   return (
-    <div className='m-auto flex flex-col h-screen justify-center items-center transition-all'>
-        <Link to={`/`} className='bg-white rounded-full md:p-5 p-3 m-3 mt-40 md:mt-2 flex self-start border items-center hover:opacity-60 transition-all'>
-            <span className='font-light text-xl px-1 capitalize'>continue shopping</span>
-            <IoArrowUndoOutline size={30} />
+    <div className='m-aut transition-all'>
+        <Link to={`/`}>
+            <button className=' capitalize flex items-center text-white bg-[#781d75] rounded-full p-2 mx-3 my-10  hover:opacity-90 transition-all'>
+                continue shopping 
+                <IoArrowUndoOutline className='m-1'/>
+            </button>
         </Link>
         <div className='grid md:grid-cols-2 grid-cols-1 border rounded md:mx-20 mx-5 py-5 shadow'>
             <div className='flex items-center justify-center h-96 m-2'>
@@ -37,7 +39,7 @@ export const ProductDetail = () => {
                 <p className='text-stone-500 px-3'>{description}</p>
                 <p className='flex justify-between items-center p-5 w-full'>
                     <span className='font-bold text-3xl text-[#781d75]'>${price}</span>
-                    <span className='font-bold text-stone-500'>{discountPercentage}%</span>
+                    <span className='font-bold text-stone-500'>Avaliable:{stock}</span>
                 </p>
                 <p onClick={()=> addToCart(product, product.id)} className='flex justify-center items-center p-3 bg-[#781d75] rounded shadow-lg hover:opacity-80 transition-all w-full'>
                     <button className='uppercase button p-2 text-white font-bold '>
@@ -45,8 +47,14 @@ export const ProductDetail = () => {
                     </button>
                 </p>
                 <p className='flex justify-between items-center p-2 w-full'>
-                    <span className='font-bold text-stone-500 hover:underline'>{brand}</span>
-                    <span className='font-bold text-[#781d75] capitalize hover:underline'>{category}</span>
+                    <span className='font-bold text-[#781d75] hover:underline'>
+                        <span className='text-stone-500'>Brand: </span>
+                        {brand}
+                    </span>
+                    <span className='font-bold text-[#781d75] capitalize hover:underline'>
+                        <span className='text-stone-500'>category: </span> 
+                        {category}
+                    </span>
                 </p>
             </div>
         </div>

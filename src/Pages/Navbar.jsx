@@ -5,10 +5,12 @@ import {FiUser} from 'react-icons/fi'
 import {TfiHelpAlt} from 'react-icons/tfi'
 import { SidebarContext } from '../contexts/SidebarContext'
 import { FaShopify } from 'react-icons/fa'
-import { LuSearch} from 'react-icons/lu'
+import { LuSearch, LuLock} from 'react-icons/lu'
 import { useNavigate } from "react-router-dom";
 import { ItemContext } from '../contexts/ItemContext'
 import {FcShop} from 'react-icons/fc'
+import { UserAuth } from '../contexts/AuthContext'
+import {PiSignOut} from 'react-icons/pi'
 
 export const Navbar = () => {
     const {isActive, setIsActive } = useContext(CartContext)
@@ -16,11 +18,22 @@ export const Navbar = () => {
     const {handleCart} = useContext(SidebarContext)
     const {itemAmount} = useContext(CartContext)
     const {searchItem, setSearchItem} = useContext(ItemContext)
-
+    const {user, logOut} = UserAuth()
+    const navigate = useNavigate()
 
    const handleDrop = () => {
         setDropDown(!dropDown)
     }
+
+    const handleLogOut = async () => {
+        try {
+            await logOut();
+            navigate('/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
  
     useEffect( () => {
@@ -39,13 +52,13 @@ export const Navbar = () => {
             </p>
         </div>
         <div className={`h-1/2 w-96  top-0 rounded bg-white flex items-center relative `}>
-            <LuSearch className='bg-stone-white mx-2'/>
+            <LuSearch className='bg-stone-white mx-1'/>
             <input 
                 type="search" 
                 name="search"
                 value={searchItem}
                 onChange={(e)=> setSearchItem(e.target.value)}
-                placeholder=' Search on Simplestore...' 
+                placeholder='search on Simplestore...' 
                 className='text-stone-500  w-full h-full font-semibold rounded outline-none transition-all duration-1000'
             />
         </div>
@@ -54,17 +67,40 @@ export const Navbar = () => {
             <div onClick={handleCart} className= "cursor-pointer relative hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
                 <span className={` text-white bg-red-500 absolute -top-[0.2rem] shadow-lg text-sm p-2 right-1  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
                 <span className={ ` ${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} text-[#781d75] flex items-center px-3 py-2 rounded-lg`}>
-                    <span >Cart</span>
+                    <span >CART</span>
                     <FaShopify  size={20} className={`m-1 ${isActive? 'text-white' : 'text-[#781d75]'}`}/>
                  </span>
             </div>
             <Link to = '/signin' className= {` ${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex hover:underline decoration-[#781d75] decoration-2 underline-offset-4`} >
-                <span className='flex items-center px-3 py-2 rounded-lg '> <TfiHelpAlt className='text-[#781d75] mt-1 mx-2'/> Help</span>
+                <span className='flex items-center px-3 py-2 rounded-lg '> <TfiHelpAlt className='text-[#781d75] mt-1 mx-2'/> HELP</span>
             </Link>
-            <Link to ='/signin'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 rounded-lg relative transition-all duration-500`}>
-                <FiUser className={` ${isActive && 'text-stone-100'} mx-2 text-[#781d75]`}/> 
-                Account
-            </Link>
+            {
+                user?.email? (
+                    <div className='flex items-center'>
+                        <Link to ='/account'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 rounded-lg relative transition-all duration-500`}>
+                            <FiUser className={` ${isActive && 'text-stone-100'} mx-2 text-[#781d75]`}/> 
+                            ACCOUNT
+                        </Link>
+                        <div onClick={handleLogOut}  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 rounded-lg relative transition-all duration-500`}>
+                            <PiSignOut className={` ${isActive && 'text-stone-100'} mx-1 text-[#781d75]`}/> 
+                            LOGOUT
+                        </div>
+                    </div>
+                ) 
+                :
+                (
+                    <div className='flex items-center'>
+                        <Link to ='/signin'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 transition-all`}>
+                            <FiUser className={` ${isActive && 'text-stone-100'} mx-2 text-[#781d75]`}/> 
+                            LOGIN
+                        </Link>
+                        <Link to ='/sigup'  className={`hover:opacity-80 rounded text-stone-100 shadow-drop shadow-violet-900 hidden md:flex cursor-pointer bg-[#fb923c] items-center px-3 py-2 transition-all`}>
+                            <LuLock className={` ${isActive && 'text-stone-100'} mr-1 text-[#781d75]`}/> 
+                            SIGNUP
+                        </Link>
+                    </div>
+                )
+            }
         </div>
     </div>
   )

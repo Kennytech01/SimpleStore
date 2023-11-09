@@ -1,19 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Link, useNavigate} from 'react-router-dom'
 import {MdKeyboardDoubleArrowLeft} from 'react-icons/md'
+import { UserAuth } from '../contexts/AuthContext'
 
 export const SignIn = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    const verify = () => {
-        const email = 'Victorybenson98@gmail.com';
-        const Email = document.getElementById('Email').value;
+    const {signIn, user} = UserAuth()
+    const navigate = useNavigate()
 
-            if(Email == email){
-                alert('Welcome back')
-            }else{
-                alert('check the email and try again')
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            await signIn (email, password)
+            // console.log(user.email)
+            navigate('/')
+        } catch (error) {
+            console.log(error.message)
         }
-        // return verify()
     }
     
   return (
@@ -32,12 +38,34 @@ export const SignIn = () => {
                 <h1 className='font-bold text-xl p-5 text-cente'>Welcome Back!</h1>
                 <h4 className='sign text-lg p-2 text-center '>Sign in into your account for full access</h4>
                 <div className='mx-5'>
-                    <form action="" method="post" >
+                    <form onSubmit={handleSubmit} >
                         <div className='p-2'>
-                            <input type="email" name="" required id="Email" autoFocus className=' w-full border p-3 px-3 rounded-full outline-none' placeholder='Your email address' />
+                            <input 
+                                type="email" 
+                                id="email" 
+                                className='w-full border p-3 rounded-full outline-none' 
+                                autoFocus 
+                                placeholder='example@gmail.com'
+                                onChange={(e) => setEmail(e.target.value)} 
+                            />
                         </div>
-                        <div  className='p-3 flex justify-center'>
-                            <button type="submit" value='submit' onClick={()=>verify()} className='submit w-full p-3 font-semibold rounded-full hover:scale-95 ease-out duration-500 bg-[#781d75] text-stone-100 '>Send login link</button>
+                        <div className='p-2'>
+                            <input 
+                                type="password"  
+                                id="password" 
+                                className='w-full border p-3 px-3 rounded-full outline-none' 
+                                placeholder='password'
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                        <div className='p-3 flex justify-center  '>
+                            <button 
+                                type="submit" 
+                                value='submit' 
+                                className='submit w-full p-3 font-semibold rounded-full hover:scale-95 transition-all ease-out duration-500 bg-[#781d75] text-stone-100 '
+                                >
+                                    SIGNIN
+                            </button>
                         </div>
                     </form>
                 </div>

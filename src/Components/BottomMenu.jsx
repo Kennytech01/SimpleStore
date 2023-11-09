@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react'
-import { LuUser, LuHome} from 'react-icons/lu'
+import { LuHome, LuLock} from 'react-icons/lu'
 import {HiMiniBars3BottomLeft} from 'react-icons/hi2'
 import { Link,} from 'react-router-dom'
 import { SidebarContext } from '../contexts/SidebarContext'
@@ -7,10 +7,13 @@ import { FcShop } from 'react-icons/fc'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import {IoArrowUndoOutline} from 'react-icons/io5'
+import { UserAuth } from '../contexts/AuthContext'
+import {PiUserLight } from 'react-icons/pi'
 
 
 export const BottomMenu = () => {
   const {mobile, clickMobile} = useContext(SidebarContext)
+  const {user} = UserAuth()
 
   
   useEffect(() => {
@@ -24,7 +27,7 @@ export const BottomMenu = () => {
         <div className='h-16 z-[99] bg-white md:-bottom-28 bottom-0 fixed w-full transition-all duration-500 flex items-center justify-around'>
             {/* mobile */}
             <div className='flex flex-cols md:hidden px-3'>
-                <HiMiniBars3BottomLeft size={20} onClick={clickMobile} className='cursor-pointer'/>
+                <HiMiniBars3BottomLeft size={20} onClick={clickMobile} className='cursor-pointer text-[#781d75]'/>
                 {
                     mobile && (
                         <div>
@@ -36,7 +39,7 @@ export const BottomMenu = () => {
                                         <span className='font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] via-[#fb923c] text-center'>SimpleStore</span>
                                         <FcShop size={40} className='ml-2 text-[#781d75]'/>
                                     </p>
-                                    <p onClick={clickMobile} className=' flex items-end justify-end p-2 text-stone-700 '><IoArrowUndoOutline size={30} /></p>
+                                    <p onClick={clickMobile} className=' flex items-end justify-end p-2 '><IoArrowUndoOutline size={30} /></p>
                                 </div>
                                 <div className='p-5 sm:px-10  px-5 flex flex-col'>
                                     <Link to = '/shop' className= "text-stone-600 py-2 text-lg hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
@@ -64,14 +67,27 @@ export const BottomMenu = () => {
                     )
                 }
             </div>
-            <Link to='/' className='flex items-center flex-col font-bold text-stone-700'>
-                <LuHome size={20} className='cursor-pointer'/>
-                Home
+            <Link to='/' className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r bg-clip-text text-transparent'>
+                <LuHome size={20} className='cursor-pointer text-[#781d75]'/>
+                HOME
             </Link>
-            <Link to={`/signin`} className='flex items-center flex-col font-bold text-stone-700'>
-                <LuUser className='cursor-pointer' />
-                Account
-            </Link>
+            <div>
+                {
+                    user? (
+                        <Link to={`/account`} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
+                            <PiUserLight className='cursor-pointer text-[#781d75]' />
+                            ACCOUNT
+                        </Link>
+                    )
+                    :
+                    (
+                        <Link to={`/signin`} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
+                            <LuLock className='cursor-pointer text-[#781d75]' />
+                            SIGNIN
+                        </Link>
+                    )
+                }
+            </div>
        </div>
     </div>
   )

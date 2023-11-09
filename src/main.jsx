@@ -5,9 +5,11 @@ import './index.css'
 import { ItemProvider } from './contexts/ItemContext.jsx'
 import { SidebarProvider } from './contexts/SidebarContext.jsx'
 import { CartProvider } from './contexts/CartContext.jsx'
+import { AuthContextProvider } from './contexts/AuthContext.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <AuthContextProvider>
     <SidebarProvider>
       <CartProvider>
         <ItemProvider> 
@@ -17,4 +19,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </ItemProvider>
       </CartProvider>
     </SidebarProvider>
+  </AuthContextProvider>
 )

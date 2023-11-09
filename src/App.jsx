@@ -14,6 +14,7 @@ import { PromoDisplay } from './Components/PromoDisplay'
 import {Shop} from './Pages/Shop'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Account } from './Components/Account'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/signin' element={<SignIn/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/shop' element={<Shop/>} />
+          <Route path='/account' element={<Account/>}/>
           <Route path='/productdetail/:id' element={<ProductDetail/>}/>
           <Route path='/admindashboard' element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
         </Routes>

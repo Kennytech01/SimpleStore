@@ -33,9 +33,9 @@ import {TbFaceIdError} from 'react-icons/tb'
         {
             (searchItem == '') &&
                 <div>
-                    <div id='hero' className='group relative  max-h-screen sm:bg-violet-300/20 bg-violet-700/10 flex items-center md:justify-betwee justify-around translation '>
-                        <div className='min-h-full flex md:justify-start justify-end items-center relative p-5 blur-[1px md:blur-non '>
-                            <img src={Shopping} alt="" className=' object-cover object-center lg:rounded-full lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#781d75]/30 lg:border-2 -scale-x-100 '/>
+                    <div id='hero' className='group relative  max-h-screen sm:bg-violet-300/20 bg-violet-700/10 flex items-center  justify-around translation '>
+                        <div className='min-h-full flex md:justify-start justify-end items-center relative p-5 '>
+                            <img src={Shopping} alt="" className=' object-cover object-center lg:rounded-full lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#fb923c] lg:border-b -scale-x-100 '/>
                         </div>
                         <div className="items-center justify-center h-80 sm:relative absolute left-0 right-0 mx-5 duration-500 transition-all">
                             <div className='bg-stone-2 rounded flex flex-col justify-center p-2 relative drop-shadow border-[#781d75]  sm:bg-black/0 h-full '>
