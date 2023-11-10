@@ -7,13 +7,13 @@ export const CartProvider = ({children}) => {
     const [itemAmount, setItemAmount] = useState(0)
     const [isActive, setIsActive] = useState(false)
     const [total, setTotal] = useState(0)
-   
+    const [leftOut, setLeftOut] = useState(0)
     
     // add to cart  
     const addToCart = (product,id) => {
       const newItem = {...product, amount: 1}
-      // check if the item already in the cart
-      const cartItem = cart.find((item)=>{
+      
+      const cartItem = cart.find((item) => {
         return item.id === id;
        });
        
@@ -26,12 +26,15 @@ export const CartProvider = ({children}) => {
           }
         });
         setCart(newCart)
+
        } else {
          setCart([...cart, newItem])
-         toast.success('Product has been added to Cart', {position: 'bottom-left'})
+         toast.success('Product has been added to Cart', {position: 'bottom-center'})
        }
     };
     
+    
+
     // remove Item from Cart
     const removeCart = (id) => {
       const newCart = cart.filter((item)=> {
@@ -50,6 +53,8 @@ export const CartProvider = ({children}) => {
       const cartItem = cart.find((item) => item.id === id);
       addToCart(cartItem, id)
     }
+
+
     
     //decreaseAmount
     const decreaseAmount = (id) => {
@@ -86,9 +91,18 @@ export const CartProvider = ({children}) => {
       }, 0);
       setTotal(total);
     });
+
+    // useEffect(()=> {
+    //   const prodLeft = cart.reduce((accumulator, currentItem) => {
+    //     return accumulator + currentItem.stock - currentItem.amount
+    //   }, 0)
+    //   setLeftOut(prodLeft)
+    // });
+
+
     
   return (
-    <CartContext.Provider value={{addToCart, cart, removeCart, clearCart, increaseAmount, decreaseAmount, itemAmount, isActive, setIsActive, total}}>
+    <CartContext.Provider value={{addToCart, cart, removeCart, clearCart, increaseAmount, decreaseAmount, itemAmount, isActive, setIsActive, total, leftOut}}>
         {children}
     </CartContext.Provider>
   )

@@ -39,7 +39,7 @@ export const ProductDetail = () => {
                 <p className='text-stone-500 px-3'>{description}</p>
                 <p className='flex justify-between items-center p-5 w-full'>
                     <span className='font-bold text-3xl text-[#781d75]'>${price}</span>
-                    <span className='font-bold text-stone-500'>Avaliable:{stock}</span>
+                    <span className=' text-stone-500'>Quantity: {stock}</span>
                 </p>
                 <p onClick={()=> addToCart(product, product.id)} className='flex justify-center items-center p-3 bg-[#781d75] rounded shadow-lg hover:opacity-80 transition-all w-full'>
                     <button className='uppercase button p-2 text-white font-bold '>

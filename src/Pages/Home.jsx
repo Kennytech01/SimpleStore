@@ -38,12 +38,12 @@ import {TbFaceIdError} from 'react-icons/tb'
                             <img src={Shopping} alt="" className=' object-cover object-center lg:rounded-full lg:w-[32rem] w-[22rem] lg:h-[32rem] h-[22rem] border-[#fb923c] lg:border-b -scale-x-100 '/>
                         </div>
                         <div className="items-center justify-center h-80 sm:relative absolute left-0 right-0 mx-5 duration-500 transition-all">
-                            <div className='bg-stone-2 rounded flex flex-col justify-center p-2 relative drop-shadow border-[#781d75]  sm:bg-black/0 h-full '>
+                            <div className='bg-stone-2 rounded flex flex-col justify-center p-2 relative  border-[#781d75]  sm:bg-black/0 h-full '>
                                 <p className=' text-[#752d42] text-4xl flex flex-wrap items-center'>
-                                    <span id='welcome' className='text-stone-20 sm:text-[#781d75 font-bold bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D] to[#fb923c] flex items-center'>Welcome <span className='text-orange-400 pl-2'>there!</span></span> 
-                                    {/* <BsEmojiSunglasses className='text-stone-700 ml-1'/> */}
+                                    <span id='welcome' className='text-stone-20 sm:text-[#781d75 font-bold bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D] to[#fb923c] flex items-center drop-shadow'>Welcome <span className='text-orange-400 pl-2'>there!</span></span> 
+                                    <BsEmojiSunglasses className='text-stone-700 ml-1'/>
                                 </p>
-                                <h2 className='p-2 py-5 bg-gradient-to-r bg-clip-text sm:text-transparent from-[#781d75] to-[#EC094D] text-xl text-white '>Get your order delivered at your doorsteps all day everyday</h2>
+                                <h2 className='p-2 py-5 bg-gradient-to-r bg-clip-text sm:text-transparent from-[#781d75] to-[#EC094D] text-xl text-white md:font-light'>Get your order delivered at your doorsteps all day everyday</h2>
                                 <button className='py-4 font-bold text-stone-100 text-xl flex'>
                                     <a href='#products' className='bg-[#781d75] rounded p-2 hover:opacity-80 cursor-pointer transition-all flex items-center'>
                                         Shop now

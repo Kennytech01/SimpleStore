@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link, useNavigate} from 'react-router-dom'
+import { Link, Navigate, useNavigate} from 'react-router-dom'
 import {MdKeyboardDoubleArrowLeft} from 'react-icons/md'
 import { UserAuth } from '../contexts/AuthContext'
 
@@ -15,7 +15,7 @@ export const SignIn = () => {
         e.preventDefault()
         try {
             await signIn (email, password)
-            // console.log(user.email)
+            // user ? <Navigate to={'/'}/> : <Navigate to={'/signup'}/>  
             navigate('/')
         } catch (error) {
             console.log(error.message)
@@ -23,7 +23,7 @@ export const SignIn = () => {
     }
     
   return (
-    <div className='flex  justify-center items-center h-[100vh]'>
+    <div className='flex items-center justify-center'>
         <div className='md:w-1/3 sm:w-2/3 w-[90%] mx-1/2'>
             <Link to= '/' className='flex justify-center items-center m-3 group'>
                 <button 
@@ -33,9 +33,9 @@ export const SignIn = () => {
             </Link>
             <div className='bg-white rounded-xl w-full text-center shadow-xl border'>
                 <div className='m-5 relative'>
-                    <p className=' font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</p>
+                    <p className=' font-bold text-3xl bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] via-[#fb923c] to-[#EC094D] text-center'>SimpleStore</p>
                 </div>
-                <h1 className='font-bold text-xl p-5 text-cente'>Welcome Back!</h1>
+                <h1 className='font-bold text-xl p-5 text-stone-800'>Welcome!</h1>
                 <h4 className='sign text-lg p-2 text-center '>Sign in into your account for full access</h4>
                 <div className='mx-5'>
                     <form onSubmit={handleSubmit} >
@@ -44,7 +44,6 @@ export const SignIn = () => {
                                 type="email" 
                                 id="email" 
                                 className='w-full border p-3 rounded-full outline-none' 
-                                autoFocus 
                                 placeholder='example@gmail.com'
                                 onChange={(e) => setEmail(e.target.value)} 
                             />

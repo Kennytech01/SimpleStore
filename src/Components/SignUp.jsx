@@ -42,7 +42,6 @@ export const SignUp = () => {
                                 type="email" 
                                 id="email" 
                                 className='w-full border p-3 rounded-full outline-none' 
-                                autoFocus 
                                 placeholder='example@gmail.com'
                                 onChange={(e) => setEmail(e.target.value)} 
                             />
