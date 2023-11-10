@@ -24,7 +24,7 @@ return (
                 <p className='text-stone-100 font-bold bg-[#781d75] p-1 rounded'>${price.toLocaleString()}</p>
                 <p className='flex flex-col transition-all text-stone-500 font-semibold'>
                     Quantity: {stock}
-                    <span className='text-[#781d75]'>{leftOut} item(s) added</span>
+                    {/* <span className='text-[#781d75]'>{leftOut} item(s) added</span> */}
                 </p>
             </p>
         </Link>

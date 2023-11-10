@@ -74,7 +74,7 @@ export const SidepriceTag = () => {
                   check out
                   <FaShopify className='ml-1'/>
                 </Link>
-                <div onClick={clearCart} className='flex items-center justify-center text-stone-50 cursor-pointer bg-[#e76d6d] p-4 m-2 hover:opacity-60 transition-all rounded'>
+                <div onClick={clearCart} className='flex items-center justify-center text-stone-50 cursor-pointer bg-[#fb923c] p-4 m-2 hover:opacity-60 transition-all rounded'>
                   <span className='px-1'>Clear all</span>
                   <BsTrash3/>
                 </div>
