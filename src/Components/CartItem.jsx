@@ -16,13 +16,12 @@ export const CartItem = ({item}) => {
                 <img src={images[0]} alt={item.title} className='max-w-[80px]' />
             </div>
             <div className=' p-2 w-full mx-2'>
-                <h1 className='font-bold py-2'>{title}</h1>
-                <p className=' text-stone-500 '>Unit price = ${price}</p>
-                <div className='flex w-full justify-between items-center'>
-                    <p className=' text-sm font-lg font-extrabold text-[#781d75] hover:underline group-hover:cursor-pointer'>Total = {`$${parseFloat(price * amount).toLocaleString()}`}</p>
+                <h1 className='font-bold text-stone-700'>{title}</h1>
+                <p className=' text-sm font-lg font-extrabold text-[#fb923c] group-hover:cursor-pointer'>{`$${parseFloat(price * amount).toLocaleString()}`}</p>
+                <div className='flex w-full justify-between items-center py-2'>
                     <div className='border px-3 py-1 rounded-lg flex items-center justify-between text-sm'>
                         <BsDashLg onClick={()=> decreaseAmount(id)}/>
-                        <span className='px-2 font-bold'>{amount}</span>
+                        <span className='px-5 font-bold'>{amount}</span>
                         <BsPlusLg onClick={()=> increaseAmount(id)}/>
                     </div>
                     <p onClick={()=> removeCart(id)} className='text-red-600'><BsTrash3/></p>

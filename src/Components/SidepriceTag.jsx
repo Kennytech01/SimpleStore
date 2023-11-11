@@ -1,11 +1,11 @@
 import React, {useContext, useEffect} from 'react'
-import {FaShopify} from 'react-icons/fa'
+import { FaShopify } from 'react-icons/fa'
 import { SidebarContext } from '../contexts/SidebarContext'
 import {Link} from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 import { CartItem } from './CartItem'
-import { BsTrash3} from 'react-icons/bs'
-import {MdOutlineKeyboardDoubleArrowRight, MdOutlineRemoveShoppingCart} from 'react-icons/md'
+import { BsTrash3, BsArrowRight} from 'react-icons/bs'
+import { MdOutlineRemoveShoppingCart} from 'react-icons/md'
 import {TiArrowForwardOutline} from 'react-icons/ti'
 import AOS from 'aos'
 import "aos/dist/aos.css"
@@ -44,7 +44,7 @@ export const SidepriceTag = () => {
                 <p onClick={handleCart} className=' flex items-end justify-end p-2 '><TiArrowForwardOutline size={30} /></p>
               </div>
               {/* cart items  */}
-              <div className='h-[60vh] p-3 overflow-auto no-scrollbar'>
+              <div className='h-[60vh] p-3 overflow-auto no-scrollba'>
                 { itemAmount? (
                     cart.map((item) => {
                       return(
@@ -65,7 +65,7 @@ export const SidepriceTag = () => {
               {/* total */}
               <div className='absolute bottom-0 w-full font-bold items-center rounded uppercase'> 
                 <div className='flex flex-wrap items-center cursor-pointer justify-between mx-2 bg-white'>
-                  <span className='flex items-center'>total <MdOutlineKeyboardDoubleArrowRight size={30} className=' animate-pulse'/></span>
+                  <span className='flex items-center'>Subtotal <BsArrowRight size={20} className='mx-1 font-bold animate-pulse'/></span>
                   <span  className=' text-[#781d75] h-full text-2xl px-2'>
                     ${total.toLocaleString()}
                   </span>
