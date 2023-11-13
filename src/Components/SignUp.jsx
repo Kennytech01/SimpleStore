@@ -13,7 +13,7 @@ export const SignUp = () => {
         e.preventDefault()
         try {
             await signUp (email, password)
-            console.log(user)
+            // console.log(user)
             navigate('/')
         } catch (error) {
             console.log(error.message)
@@ -21,7 +21,7 @@ export const SignUp = () => {
     }
 
   return (
-    <div className='flex  justify-center items-center h-[100vh]'>
+    <div className='flex  justify-center items-center'>
         <div className='md:w-1/3 sm:w-2/3 w-[90%] mx-1/2 '>
             <Link to= '/' className='flex justify-center items-center m-3 group'>
                 <button 

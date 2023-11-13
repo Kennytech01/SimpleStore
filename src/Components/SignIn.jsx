@@ -15,8 +15,11 @@ export const SignIn = () => {
         e.preventDefault()
         try {
             await signIn (email, password)
-            // user ? <Navigate to={'/'}/> : <Navigate to={'/signup'}/>  
-            navigate('/')
+            user ? 
+            <Navigate to={'/'}/> 
+            : 
+            <Navigate to={'/signup'}/>  
+            // navigate('/')
         } catch (error) {
             console.log(error.message)
         }

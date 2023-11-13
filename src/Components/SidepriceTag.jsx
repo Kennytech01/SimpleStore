@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 import { CartItem } from './CartItem'
 import { BsTrash3, BsArrowRight} from 'react-icons/bs'
-import { MdOutlineRemoveShoppingCart} from 'react-icons/md'
+import { MdOutlineRemoveShoppingCart, MdPayment} from 'react-icons/md'
 import {TiArrowForwardOutline} from 'react-icons/ti'
 import AOS from 'aos'
 import "aos/dist/aos.css"
@@ -38,8 +38,9 @@ export const SidepriceTag = () => {
             <div className='bg-white relative shadow-lg h-full rounded'>
               <div className='h-20 mx-2 flex items-center justify-between border-b relative'>
                 <p className='flex items-center text-lg font-bold capitalize  bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'>
-                    {itemAmount > 1 ? <span>{itemAmount } items </span>: <span>{itemAmount } item </span>}
-                    <FaShopify className='mr-1 text-[#781d75]'/>
+                    {/* {itemAmount > 1 ? <span>{itemAmount } items </span>: <span>{itemAmount } item </span>} */}
+                    <span>Cart Overview</span>
+                    <FaShopify size={30} className='mr-1 text-[#781d75]'/>
                 </p>
                 <p onClick={handleCart} className=' flex items-end justify-end p-2 '><TiArrowForwardOutline size={30} /></p>
               </div>
@@ -72,7 +73,7 @@ export const SidepriceTag = () => {
                 </div>
                 <Link to='/signIn' onClick={handleCart} className='p-4 justify-center bg-[#781d75] text-stone-100 font-bold shadow hover:opacity-60 transition-all mx-2 flex items-center rounded'>
                   check out
-                  <FaShopify className='ml-1'/>
+                  <MdPayment className='ml-1'/>
                 </Link>
                 <div onClick={clearCart} className='flex items-center justify-center text-stone-50 cursor-pointer bg-[#fb923c] p-4 m-2 hover:opacity-60 transition-all rounded'>
                   <span className='px-1'>Clear all</span>
