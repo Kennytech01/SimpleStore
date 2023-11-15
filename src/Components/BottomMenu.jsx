@@ -1,19 +1,20 @@
-import React, {useContext, useEffect} from 'react'
-import { LuHome, LuLock} from 'react-icons/lu'
+import React, {useContext, useEffect, useState} from 'react'
+import { LuHome, LuLock, LuShoppingBag, LuHeart,} from 'react-icons/lu'
 import {HiMiniBars3BottomLeft} from 'react-icons/hi2'
-import { Link,} from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import { SidebarContext } from '../contexts/SidebarContext'
 import { FcShop } from 'react-icons/fc'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import {IoArrowUndoOutline} from 'react-icons/io5'
 import { UserAuth } from '../contexts/AuthContext'
-import {PiUserLight } from 'react-icons/pi'
+import {PiUserLight,PiUser, PiSignOut } from 'react-icons/pi'
 
 
 export const BottomMenu = () => {
   const {mobile, clickMobile} = useContext(SidebarContext)
   const {user} = UserAuth()
+  const [menu, setMenu] = useState(false)
 
   
   useEffect(() => {
@@ -21,6 +22,10 @@ export const BottomMenu = () => {
       duration: 1000
     })    
   },[])
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
 
   return (
     <div>
@@ -74,10 +79,61 @@ export const BottomMenu = () => {
             <div>
                 {
                     user? (
-                        <Link to={`/account`} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
-                            <PiUserLight className='cursor-pointer text-[#781d75]' />
-                            ACCOUNT
-                        </Link>
+                        <div className='transition-all '>
+                            <p onClick={()=> setMenu(!menu)} onMouseOver={()=> setMenu(!menu)} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
+                                <PiUserLight className='cursor-pointer text-[#781d75]' />
+                                ACCOUNT
+                            </p>
+                            {
+                                menu && (
+                                    <div className='absolute bg-white shadow flex md:hidden -top-[19rem] z-[99] right-3 w-48 rounded p-2'>
+                                        <div className='flex flex-col p-3 w-full transition-all '>
+                                            <NavLink 
+                                                to={`acct_info`}
+                                                style={
+                                                    ({isActive}) => {
+                                                    return {color: isActive && '#781d75'}
+                                                }}
+                                                className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'
+                                                >
+                                                <PiUser className='m-2'/>
+                                                Account Info
+                                            </NavLink>
+                                            <NavLink 
+                                                to={`order`}
+                                                style={
+                                                    ({isActive}) => {
+                                                    return {color: isActive && '#781d75'}
+                                                }} 
+                                                className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'>
+                                                <LuShoppingBag className='m-2'/>
+                                                Orders
+                                            </NavLink>
+                                            <NavLink 
+                                                to={`saved_items`}
+                                                style={
+                                                    ({isActive}) => {
+                                                    return {color: isActive && '#781d75'}
+                                                }}
+                                                className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'>
+                                                <LuHeart className="m-2"/>
+                                                Saved Items
+                                            </NavLink>
+                                            <NavLink 
+                                                to={`/signin`}
+                                                className='flex items-center p-2 mt-5 w-full bg-[#fb923c] rounded hover:opacity-75 transition-all text-white'
+                                                >
+                                                <PiSignOut className="m-2"/>
+                                                Logout
+                                            </NavLink>
+                                            <NavLink onClick={scrollToTop} to={`/`} className="text-[#fb923c] flex items-center p-2 hover:underline decoration-[#781d75] decoration-2 underline-offset-4">
+                                                <LuHome className='m-2'/>Return home
+                                            </NavLink>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div>
                     )
                     :
                     (

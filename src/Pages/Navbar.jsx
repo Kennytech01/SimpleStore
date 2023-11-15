@@ -42,6 +42,10 @@ export const Navbar = () => {
         });
       })
 
+      const scrollToTop = () => {
+        window.scrollTo(0, 0)
+    }
+
    return (
     <div className={`${isActive ? 'fixed w-full top-0 bg-[#781d75] z-[99] ' : 'bg-stone-100 '} transition-all flex justify-between items-center h-20 md:px-10 px-2  shadow text-stone-800 `}>
         {/* leftSide */}   
@@ -71,13 +75,13 @@ export const Navbar = () => {
                     <span >CART</span>
                  </span>
             </div>
-            <Link to = '/signin' className= {` ${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex hover:underline decoration-[#781d75] decoration-2 underline-offset-4`} >
+            <Link onClick={scrollToTop} to = '/signin' className= {` ${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex hover:underline decoration-[#781d75] decoration-2 underline-offset-4`} >
                 <span className='flex items-center px-3 py-2 rounded-lg '> <TfiHelpAlt className='text-[#781d75] mt-1 mx-2'/> HELP</span>
             </Link>
             {
                 user?.email? (
                     <div className='flex items-center'>
-                        <Link to ='/account'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 rounded-lg relative transition-all duration-500`}>
+                        <Link onClick={scrollToTop} to ='account/acct_info'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 rounded-lg relative transition-all duration-500`}>
                             <PiUserLight className={` ${isActive && 'text-stone-100'} mx-2 text-[#781d75]`}/> 
                             ACCOUNT
                         </Link>
@@ -90,11 +94,11 @@ export const Navbar = () => {
                 :
                 (
                     <div className='flex items-center'>
-                        <Link to ='/signin'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 transition-all`}>
+                        <Link onClick={scrollToTop} to ='/signin'  className={`${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} hidden md:flex cursor-pointer hover:underline decoration-[#781d75] decoration-2 underline-offset-4 items-center px-3 py-2 transition-all`}>
                             <FiUser className={` ${isActive && 'text-stone-100'} mx-2 text-[#781d75]`}/> 
                             LOGIN
                         </Link>
-                        <Link to ='/sigup'  className={`hover:opacity-80 rounded text-stone-100 shadow-drop shadow-violet-900 hidden md:flex cursor-pointer bg-[#fb923c] items-center px-3 py-2 transition-all`}>
+                        <Link onClick={scrollToTop} to ='/sigup'  className={`hover:opacity-80 rounded text-stone-100 shadow-drop shadow-violet-900 hidden md:flex cursor-pointer bg-[#fb923c] items-center px-3 py-2 transition-all`}>
                             <LuLock className={` ${isActive && 'text-stone-100'} mr-1 text-[#781d75]`}/> 
                             SIGNUP
                         </Link>

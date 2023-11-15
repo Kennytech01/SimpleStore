@@ -15,6 +15,9 @@ import {Shop} from './Pages/Shop'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Account } from './Components/Account'
+import { SavedItems } from './Components/SavedItems'
+import { AccountInfo } from './Components/AccountInfo'
+import { Orders } from './Components/Orders'
 
 const App = () => {
   return (
@@ -32,6 +35,11 @@ const App = () => {
           <Route path='/account' element={<Account/>}/>
           <Route path='/productdetail/:id' element={<ProductDetail/>}/>
           <Route path='/admindashboard' element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
+          <Route path='account' element={<Account/>}>
+            <Route path='order' element={<Orders/>}/>
+            <Route path='saved_items' element={<SavedItems/>} />
+            <Route path='acct_info' element={<AccountInfo/>}/>
+          </Route>
         </Routes>
         <ConditionRoute>
           <BottomMenu/>

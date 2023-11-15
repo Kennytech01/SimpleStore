@@ -23,7 +23,7 @@ export const SidepriceTag = () => {
 
   return (
     <div>
-      <div onClick={handleCart} className='fixed top-1/2 md:right-0 -right-40 transition-all bg-[#781d75] h-20 w-auto text-stone-100 font-bold px-1 flex flex-col justify-around items-center shadow'>
+      <div onClick={handleCart} className='fixed top-1/2 z-[999] md:right-0 -right-40 transition-all bg-[#781d75] h-20 w-auto text-stone-100 font-bold px-1 flex flex-col justify-around items-center shadow'>
         <p className='flex items-center text-sm w-full'>
             {itemAmount > 1 ? itemAmount + ' items' : itemAmount + ' item'}
             <FaShopify className='mr-1'/>
