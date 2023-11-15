@@ -8,15 +8,15 @@ export const SignUp = () => {
     const [password, setPassword] = useState('')
     const {signUp, user} = UserAuth()
     const navigate = useNavigate()
+    const [error, setError] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             await signUp (email, password)
-            // console.log(user)
             navigate('/')
         } catch (error) {
-            console.log(error.message)
+            setError(error.message)
         }
     }
 
@@ -35,6 +35,9 @@ export const SignUp = () => {
                 </div>
                 <h1 className='font-bold text-xl p-3 text-cente'>Sign up!</h1>
                 <h4 className='sign text-lg p-2 text-center'>Get access to members only content.</h4>
+                {
+                  error? <p className='text-[#e50914] my-3 '>{error}</p> : null
+                }
                 <div className='mx-5'>
                     <form onSubmit={handleSubmit} >
                         <div className='p-2'>

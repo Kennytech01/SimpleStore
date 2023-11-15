@@ -10,12 +10,12 @@ export const AuthContextProvider = ({children}) => {
 
     //signup
     const signUp = (email, passward) => {
-        createUserWithEmailAndPassword(auth, email, passward)
+        return createUserWithEmailAndPassword(auth, email, passward)
     }
 
     //signIn
     const signIn = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     //logout

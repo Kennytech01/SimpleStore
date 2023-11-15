@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useEffect}from 'react'
 import {PiUser, PiSignOut} from 'react-icons/pi'
 import { NavLink} from 'react-router-dom'
 import {LuShoppingBag, LuHeart, LuHome} from 'react-icons/lu'
+import AOS from 'aos'
+import "aos/dist/aos.css"
 
 export const Sidebar = () => {
 
-    const scrollToTop = () => {
-        window.scrollTo(0,0)
-    }
+
+    useEffect(() => {
+        AOS.init({
+          duration: 1000
+        })    
+      },[])
+    
+      const scrollToTop = () => {
+        window.scrollTo(0, 0)
+      }
 
   return (
-    <div className='lg:w-80 w-60 bg-white text-stone-700 h-80 flex items-center rounded shadow'>
+    <div  className='lg:w-80 w-60 bg-white text-stone-700 h-80 flex items-center rounded shadow'>
         <div className='flex flex-col p-3 w-full transition-all '>
             <NavLink 
                 to={`acct_info`}
@@ -50,7 +59,7 @@ export const Sidebar = () => {
                 <PiSignOut className="m-2"/>
                 Logout
             </NavLink>
-            <NavLink onClick={scrollToTop} to={`/`} className="text-[#fb923c] flex items-center p-2 hover:underline decoration-[#781d75] decoration-2 underline-offset-4">
+            <NavLink onClick={scrollToTop} to={`/`} className="text-[#fb923c] border-b flex items-center p-2 hover:underline decoration-[#781d75] decoration-2 underline-offset-4">
                 <LuHome className='m-2'/>Return home
             </NavLink>
         </div>

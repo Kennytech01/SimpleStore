@@ -19,13 +19,16 @@ export const BottomMenu = () => {
   
   useEffect(() => {
     AOS.init({
-      duration: 1000
+      duration: 500
     })    
   },[])
 
+  
   const scrollToTop = () => {
     window.scrollTo(0, 0)
   }
+
+
 
   return (
     <div>
@@ -86,49 +89,54 @@ export const BottomMenu = () => {
                             </p>
                             {
                                 menu && (
-                                    <div className='absolute bg-white shadow flex md:hidden -top-[19rem] z-[99] right-3 w-48 rounded p-2'>
+                                    <div data-aos="fade-left"  className='absolute bg-white shadow flex md:hidden -top-[19rem] z-[99] right-3 w-48 rounded p-2'>
                                         <div className='flex flex-col p-3 w-full transition-all '>
-                                            <NavLink 
-                                                to={`acct_info`}
-                                                style={
-                                                    ({isActive}) => {
-                                                    return {color: isActive && '#781d75'}
-                                                }}
-                                                className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'
-                                                >
-                                                <PiUser className='m-2'/>
-                                                Account Info
-                                            </NavLink>
-                                            <NavLink 
-                                                to={`order`}
-                                                style={
-                                                    ({isActive}) => {
-                                                    return {color: isActive && '#781d75'}
-                                                }} 
-                                                className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'>
-                                                <LuShoppingBag className='m-2'/>
-                                                Orders
-                                            </NavLink>
-                                            <NavLink 
-                                                to={`saved_items`}
-                                                style={
-                                                    ({isActive}) => {
-                                                    return {color: isActive && '#781d75'}
-                                                }}
-                                                className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'>
-                                                <LuHeart className="m-2"/>
-                                                Saved Items
-                                            </NavLink>
-                                            <NavLink 
-                                                to={`/signin`}
-                                                className='flex items-center p-2 mt-5 w-full bg-[#fb923c] rounded hover:opacity-75 transition-all text-white'
-                                                >
-                                                <PiSignOut className="m-2"/>
-                                                Logout
-                                            </NavLink>
-                                            <NavLink onClick={scrollToTop} to={`/`} className="text-[#fb923c] flex items-center p-2 hover:underline decoration-[#781d75] decoration-2 underline-offset-4">
-                                                <LuHome className='m-2'/>Return home
-                                            </NavLink>
+                                            <p onClick={()=> setMenu(!menu)}>
+                                                <Link 
+                                                    to={`account/acct_info`}
+                                                    onClick={scrollToTop}
+                                                    className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'
+                                                    >
+                                                    <PiUser className='m-2'/>
+                                                    Account Info
+                                                </Link>
+                                            </p>
+                                            <p onClick={()=> setMenu(!menu)}>
+                                                <Link 
+                                                    to={`account/order`}
+                                                    onClick={scrollToTop} 
+                                                    className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'>
+                                                    <LuShoppingBag className='m-2'/>
+                                                    Orders
+                                                </Link>
+                                            </p>
+                                            <p onClick={()=> setMenu(!menu)}>
+                                                <Link 
+                                                    to={`account/saved_items`}
+                                                    onClick={scrollToTop}
+                                                    className='flex items-center p-2 w-full hover:underline decoration-[#781d75] decoration-2 underline-offset-4'>
+                                                    <LuHeart className="m-2"/>
+                                                    Saved Items
+                                                </Link>
+                                            </p>
+                                            <p>
+                                                <Link 
+                                                    to={`/signin`}
+                                                    onClick={scrollToTop}
+                                                    className='flex items-center p-2 mt-5 w-full bg-[#fb923c] rounded hover:opacity-75 transition-all text-white'
+                                                    >
+                                                    <PiSignOut className="m-2"/>
+                                                    Logout
+                                                </Link>
+                                            </p>
+                                            <p>
+                                                <Link 
+                                                    onClick={scrollToTop} 
+                                                    to={`/`} 
+                                                    className="text-[#fb923c] flex items-center p-2 hover:underline decoration-[#781d75] decoration-2 underline-offset-4">
+                                                    <LuHome className='m-2'/>Return home
+                                                </Link>
+                                            </p>
                                         </div>
                                     </div>
                                 )

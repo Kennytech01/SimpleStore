@@ -18,6 +18,7 @@ import { Account } from './Components/Account'
 import { SavedItems } from './Components/SavedItems'
 import { AccountInfo } from './Components/AccountInfo'
 import { Orders } from './Components/Orders'
+import { MyCart } from './Components/MyCart'
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/account' element={<Account/>}/>
           <Route path='/productdetail/:id' element={<ProductDetail/>}/>
           <Route path='/admindashboard' element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
+          <Route path='mycart' element={<MyCart/>}/>
           <Route path='account' element={<Account/>}>
             <Route path='order' element={<Orders/>}/>
             <Route path='saved_items' element={<SavedItems/>} />

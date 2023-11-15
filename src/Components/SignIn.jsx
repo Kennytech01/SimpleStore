@@ -6,28 +6,26 @@ import { UserAuth } from '../contexts/AuthContext'
 export const SignIn = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
+    const [error, setError] = useState()
     const {signIn, user} = UserAuth()
-    const navigate = useNavigate()
+    const navigate = useNavigate('')
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setError('')
         try {
-            await signIn (email, password)
-            user ? 
-            <Navigate to={'/'}/> 
-            : 
-            <Navigate to={'/signup'}/>  
-            // navigate('/')
-        } catch (error) {
-            console.log(error.message)
+          await signIn(email, password)
+          navigate('/')
+        } 
+        catch (error) {
+          setError(error.message)
         }
-    }
+      };
     
   return (
     <div className='flex items-center justify-center'>
-        <div className='md:w-1/3 sm:w-2/3 w-[90%] mx-1/2'>
+        <div className='md:w-1/2 sm:w-2/3 w-[90%] mx-1/ m-auto'>
             <Link to= '/' className='flex justify-center items-center m-3 group'>
                 <button 
                     className='p-3 border bg-white flex items-center justify-center font-semibold rounded-full group-hover:scale-110 ease-out duration-500'>
@@ -40,6 +38,9 @@ export const SignIn = () => {
                 </div>
                 <h1 className='font-bold text-xl p-5 text-stone-800'>Welcome!</h1>
                 <h4 className='sign text-lg p-2 text-center '>Sign in into your account for full access</h4>
+                {
+                  error? <p className='text-[#e50914] my-3 '>{error}</p> : null
+                }
                 <div className='mx-5'>
                     <form onSubmit={handleSubmit} >
                         <div className='p-2'>
