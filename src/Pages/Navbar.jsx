@@ -77,7 +77,7 @@ export const Navbar = () => {
         {/* right-Side */}
         <div className={`${isActive? 'text-stone-100' : 'bg-gradient-to-r bg-clip-text text-transparent to-[#781d75] from-[#EC094D]'} md:flex items-center sm:px-5 px-2 `} >
             <Link to={`/mycart`} onClick={scrollToTop} className= "cursor-pointer relative hover:underline decoration-[#781d75] decoration-2 underline-offset-4" >
-                <span className={` text-white bg-red-500 absolute -top-1 shadow-lg text-sm p-2 left-7  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
+                <span className={` text-white bg-red-500 absolute top-3 md:-top-1 shadow-lg text-sm p-2 left-7  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
                 <span className={ ` ${isActive ? 'bg-gradient-to-r bg-clip-text text-transparent to-white from-[#fb923c] ' :' bg-gradient-to-r bg-clip-text text-transparent  from-[#781d75] to-[#EC094D]'} text-[#781d75] flex items-center px-3 py-2 rounded-lg`}>
                     <FaShopify  size={20} className={`mr-2 ${isActive? 'text-white' : 'text-[#781d75]'}`}/>
                     <span >CART</span>

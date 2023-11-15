@@ -19,6 +19,7 @@ import { SavedItems } from './Components/SavedItems'
 import { AccountInfo } from './Components/AccountInfo'
 import { Orders } from './Components/Orders'
 import { MyCart } from './Components/MyCart'
+import { Tooltip } from 'react-tooltip'
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
         </ConditionRoute>
       </Router>
       <ToastContainer autoClose={1000}/>
+      <Tooltip id="my-tooltip" place='top' />
     </div>
   )
 }

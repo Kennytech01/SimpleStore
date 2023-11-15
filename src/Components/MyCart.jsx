@@ -14,7 +14,7 @@ export const MyCart = () => {
     const {cart, clearCart, itemAmount, total} = useContext(CartContext)
   return (
     <div>
-        <div className='flex justify-between lg:mx-10 p-5 gap-8'>
+        <div className='md:flex justify-between sm:mx-14 mx-5 py-10 gap-8 mx-'>
             <div className='bg-white relative shadow-lg w-full rounded '>
                 <div className='h-20 mx-2 flex items-center justify-between border-b relative'>
                     <p className='flex items-center text-lg font-bold uppercase  bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'>
@@ -23,7 +23,7 @@ export const MyCart = () => {
                     </p>
                 </div>
                 {/* cart items  */}
-                <div className='h-[60vh] p-3 overflow-auto no-scrollbar'>
+                <div className='h-[60vh] p-3 overflow-auto no-scrollbar my-10'>
                     { itemAmount? (
                         cart.map((item) => {
                             return(
@@ -43,7 +43,7 @@ export const MyCart = () => {
                 </div>
             </div>
             {/* check out */}
-            <div className=' w-96 bg-white rounded uppercase'>
+            <div className=' md:w-96 bg-white rounded uppercase h-60 md:mx-0 '>
                 <p className='border-b p-2 py-5'>Cart Summary</p>
                 <div className='flex flex-wrap items-center cursor-pointer justify-between mx-2 bg-white py-5 border-b my-1'>
                     <span className='flex items-center'>Subtotal <BsArrowRight size={20} className='mx-1 font-bold animate-pulse'/></span>
@@ -58,7 +58,7 @@ export const MyCart = () => {
             </div>
         </div>
         {/* saved items */}
-        <div className='bg-white rounded shadow mx-14 mt-5'>
+        <div className='bg-white rounded shadow sm:mx-14 mx-5  mt-5'>
             <h1 className='border-b p-5 text-lg'>Saved Items</h1>
             <div className='flex flex-col justify-center items-center h-full '>
                 < BsSuitHeart size={60} className='text-[#781d75]'/>
@@ -73,7 +73,7 @@ export const MyCart = () => {
             </div>
         </div>
         {/* recently viewed */}
-        <div className='bg-white rounded shadow mx-14 mt-5'>
+        <div className='bg-white rounded shadow sm:mx-14 mx-5 mt-5'>
             <h1 className='border-b p-5 text-lg'>Recently Viewed</h1>
             <p className='p-5 text-center'>recently viewd items will apppear </p>
         </div>
