@@ -3,7 +3,7 @@ import { CartContext } from '../contexts/CartContext'
 import {LiaPlusSolid} from 'react-icons/lia'
 import { Link } from 'react-router-dom'
 import {BsSuitHeart, BsFillSuitHeartFill} from 'react-icons/bs'
-import { Tooltip } from 'react-tooltip'
+
 
 export const Product = ({product}) => {
     const {id, title, discountPercentage, price, stock, thumbnail} = product
@@ -21,7 +21,7 @@ export const Product = ({product}) => {
 
 return (
     <div  className='rounded h-96 flex flex-col justify-between sm:p-4 p-1 bg-white shadow'>
-        <div  c className='h-4/5 flex group flex-col justify-center'>
+        <div className='h-4/5 flex group flex-col justify-center'>
             <span onClick={()=> setLikebtn(!likebtn)} className='flex text-sm justify-end font-bold text-[#fb923c] m-5 transition-all'>
                 {
                     likebtn?

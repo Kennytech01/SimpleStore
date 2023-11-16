@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import authPage from '../assets/images/authPage.png'
 import { UserAuth } from '../contexts/AuthContext'
+import { CiLock, CiMail } from "react-icons/ci";
+import { toast } from 'react-toastify';
 
 export const SignUp = () => {
     const [email, setEmail] = useState('')
@@ -14,8 +16,10 @@ export const SignUp = () => {
         e.preventDefault()
         try {
             await signUp (email, password)
+            toast.success('signed up successfully')
             navigate('/')
         } catch (error) {
+            toast.error('an error occured!')
             setError(error.message)
         }
     }
@@ -38,23 +42,25 @@ export const SignUp = () => {
                 }
                 <div className='mx-5'>
                     <form onSubmit={handleSubmit} >
-                        <div className='p-2'>
+                        <div className=' my-2 px-3 relative border flex items-center rounded-full bg-white text-stone-800'>
+                            <CiMail size={20}/>
                             <input 
                                 type="email" 
                                 id="email" 
-                                className='w-full border p-3 rounded-full outline-none' 
-                                placeholder='example@gmail.com'
+                                className='w-full rounded-full py-3 px-1 outline-none' 
+                                placeholder='User@gmail.com'
                                 onChange={(e) => setEmail(e.target.value)} 
                             />
                         </div>
-                        <div className='p-2'>
+                        <div className='p-3 my-2 relative border flex items-center rounded-full bg-white text-stone-800'>
+                            <CiLock className='text-stone-600' size={20}/>
                             <input 
                                 type="password"  
                                 id="password" 
-                                className='w-full border p-3 px-3 rounded-full outline-none' 
-                                placeholder='eurunsomx'
+                                className='w-full outline-none px-1' 
+                                placeholder='Password'
                                 onChange={(e) => setPassword(e.target.value)}
-                             />
+                            />
                         </div>
                         <div className='p-3 flex justify-center  '>
                             <button 

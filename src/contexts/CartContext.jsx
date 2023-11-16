@@ -33,7 +33,6 @@ export const CartProvider = ({children}) => {
        }
     };
     
-    
 
     // remove Item from Cart
     const removeCart = (id) => {
@@ -55,7 +54,6 @@ export const CartProvider = ({children}) => {
     }
 
 
-    
     //decreaseAmount
     const decreaseAmount = (id) => {
       const cartItem = cart.find((item) => item.id === id);

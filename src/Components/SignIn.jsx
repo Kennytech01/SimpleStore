@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import { Link, useNavigate} from 'react-router-dom'
-import {MdKeyboardDoubleArrowLeft} from 'react-icons/md'
+import { CiLock, CiMail } from "react-icons/ci";
 import { UserAuth } from '../contexts/AuthContext'
 import authPage from '../assets/images/authPage.png'
+import { toast } from 'react-toastify';
 
 
 export const SignIn = () => {
@@ -17,11 +18,13 @@ export const SignIn = () => {
         e.preventDefault()
         setError('')
         try {
-          await signIn(email, password)
-          navigate('/')
+            await signIn(email, password)
+            toast.success('signed in successfully')
+            navigate('/')
         } 
         catch (error) {
-          setError(error.message)
+            toast.error('an error occured!')
+            setError(error.message)
         }
       };
     
@@ -43,24 +46,27 @@ export const SignIn = () => {
                 }
                 <div className='mx-5'>
                     <form onSubmit={handleSubmit} >
-                        <div className='p-2'>
+                        <div className=' my-2 px-3 relative border flex items-center rounded-full bg-white text-stone-800'>
+                            <CiMail size={20}/>
                             <input 
                                 type="email" 
                                 id="email" 
-                                className='w-full border p-3 rounded-full outline-none' 
-                                placeholder='example@gmail.com'
+                                className='w-full rounded-full py-3 px-1 outline-none' 
+                                placeholder='User@gmail.com'
                                 onChange={(e) => setEmail(e.target.value)} 
                             />
                         </div>
-                        <div className='p-2'>
+                        <div className='p-3 my-2 relative border flex items-center rounded-full bg-white text-stone-800'>
+                            <CiLock className='text-stone-600' size={20}/>
                             <input 
                                 type="password"  
                                 id="password" 
-                                className='w-full border p-3 px-3 rounded-full outline-none' 
-                                placeholder='password'
+                                className='w-full outline-none px-1' 
+                                placeholder='Password'
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
+                        <p className='text-end pr-3 underline text-[#781d75] cursor-pointer'>forgot password?</p>
                         <div className='p-3 flex justify-center  '>
                             <button 
                                 type="submit" 
@@ -72,7 +78,6 @@ export const SignIn = () => {
                         </div>
                     </form>
                 </div>
-                <p className='text-end pr-3 underline text-[#781d75]'>forgot password?</p>
                 <p className='p-5'>
                     Already have an account? <Link to='/signup' className='hover:underline text-[#781d75] font-bold'>signUp</Link>
                 </p>

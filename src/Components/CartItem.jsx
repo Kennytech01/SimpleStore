@@ -15,17 +15,20 @@ export const CartItem = ({item}) => {
             <div>
                 <img src={images[0]} alt={item.title} className='max-w-[80px]' />
             </div>
-            <div className=' p-2 w-full mx-2'>
-                <h1 className='font-bold text-stone-700'>{title}</h1>
-                <p className=' text-[#fb923c] group-hover:cursor-pointer'>{`$${parseFloat(price * amount).toLocaleString()}`}</p>
-                <div className='flex w-full justify-between items-center py-2'>
-                    <div className='border px-3 py-1 rounded-lg flex items-center justify-between text-sm'>
-                        <BsDashLg onClick={()=> decreaseAmount(id)}/>
-                        <span className='px-5 font-bold'>{amount}</span>
-                        <BsPlusLg onClick={()=> increaseAmount(id)}/>
-                    </div>
-                    <p onClick={()=> removeCart(id)} className='text-[#fb923c] border border-[#fb923c] flex items-center p-1 rounded'><BsTrash3/> REMOVE</p>
-                </div>
+            <div className=' p-2 w-full m- flex flex-col justify-between'>
+                <h1 className='text-stone-700'>{title}</h1>
+                <p className='flex justify-between items-center my- w-full'>
+                    <span className=' text-[#fb923c] group-hover:cursor-pointer'>{`$${parseFloat(price * amount).toLocaleString()}`}</span>
+                    <span onClick={()=> removeCart(id)} className='text-[#fb923c] cursor-pointer  sm:border border-[#fb923c] flex items-center p-1 rounded'>
+                        <BsTrash3/> 
+                        <span className='sm:flex hidden'>REMOVE</span>
+                    </span>
+                </p>
+                <p className='border px-3 py-1 rounded-lg flex items-center justify-between text-sm m-2 w-32 '>
+                    <BsDashLg onClick={()=> decreaseAmount(id)} className='cursor-pointer'/>
+                    <span className='px-5 font-bold'>{amount}</span>
+                    <BsPlusLg onClick={()=> increaseAmount(id)} className='cursor-pointer'/>
+                </p>
             </div>
         </div>
     </div>

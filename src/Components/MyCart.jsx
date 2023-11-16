@@ -10,8 +10,8 @@ import {TiArrowForwardOutline} from 'react-icons/ti'
 
 
 export const MyCart = () => {
-    const {handleCart, isOpen} = useContext(SidebarContext)
-    const {cart, clearCart, itemAmount, total} = useContext(CartContext)
+    const {handleCart} = useContext(SidebarContext)
+    const {cart,itemAmount, total} = useContext(CartContext)
   return (
     <div>
         <div className='md:flex justify-between sm:mx-14 mx-5 py-10 gap-8 mx-'>
