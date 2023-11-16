@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate} from 'react-router-dom'
-import {MdKeyboardDoubleArrowLeft} from 'react-icons/md'
+import authPage from '../assets/images/authPage.png'
 import { UserAuth } from '../contexts/AuthContext'
 
 export const SignUp = () => {
@@ -21,15 +21,13 @@ export const SignUp = () => {
     }
 
   return (
-    <div className='flex  justify-center items-center'>
-        <div className='md:w-1/3 sm:w-2/3 w-[90%] mx-1/2 '>
-            <Link to= '/' className='flex justify-center items-center m-3 group'>
-                <button 
-                    className='p-3 border bg-white flex items-center justify-center font-semibold rounded-full group-hover:scale-110 ease-out duration-500'>
-                    <MdKeyboardDoubleArrowLeft size={30}/>
-                </button>
-            </Link>
-            <div className='bg-white rounded-xl w-full text-center shadow-xl border'>
+    <div className='relative'>
+        <div className=' fixed top-0 h-screen right-0 left-0 -z-20'>
+            <img src={authPage} alt="image" className='h-full w-full object-cover blur'/>
+            <p className='bg-[#fb923c]/10 top-0 fixed right-0 left-0 h-screen z-10'></p>
+        </div>
+        <div className='lg:w-1/3 sm:w-2/3 w-[90%] m-auto mt-20'>
+            <div className=' rounded-xl w-full text-center shadow-xl border'>
                 <div className='m-5 relative'>
                     <p className=' font-bold text-3xl bg-gradient-to-tr bg-clip-text text-transparent from-[#781d75] to-[#EC094D] text-center'>SimpleStore</p>
                 </div>
@@ -73,6 +71,9 @@ export const SignUp = () => {
                     Already have an account? <Link to='/signin' className='hover:underline text-[#781d75] font-bold'>signIn</Link>
                 </p>
             </div>
+            <Link to= '/' className='underline m-3 text-[#781d75]'>
+                return home
+            </Link>
         </div>
     </div>
   )

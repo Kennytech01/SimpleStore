@@ -29,15 +29,7 @@ export const Navbar = () => {
         setDropDown(!dropDown)
     }
 
-    const handleLogOut = async () => {
-        try {
-            await logOut();
-            navigate('/')
-        } catch (error) {
-            console.log(error)
-        }
-    }
- 
+     
     useEffect( () => {
         window.addEventListener('scroll', () => {
             window.scrollY > 70 ? setIsActive(true) : setIsActive(false)
@@ -53,6 +45,15 @@ export const Navbar = () => {
           duration: 500
         })    
     },[])
+
+    const handleLogOut = async () => {
+        try {
+            await logOut();
+            navigate('/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
    return (
     <div className={`${isActive ? 'fixed w-full top-0 bg-[#781d75] z-[99] ' : 'bg-stone-100 '} transition-all flex justify-between items-center h-20 md:px-10 px-2  shadow text-stone-800 `}>

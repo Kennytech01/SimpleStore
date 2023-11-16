@@ -13,7 +13,7 @@ import {PiUserLight,PiUser, PiSignOut } from 'react-icons/pi'
 
 export const BottomMenu = () => {
   const {mobile, clickMobile} = useContext(SidebarContext)
-  const {user} = UserAuth()
+  const {user, logOut} = UserAuth()
   const [menu, setMenu] = useState(false)
 
   
@@ -23,12 +23,19 @@ export const BottomMenu = () => {
     })    
   },[])
 
-  
   const scrollToTop = () => {
     window.scrollTo(0, 0)
   }
 
-
+  const handleLogOut = async () => {
+        try {
+            await logOut();
+            navigate('/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+  
 
   return (
     <div>
@@ -83,8 +90,8 @@ export const BottomMenu = () => {
                 {
                     user? (
                         <div className='transition-all '>
-                            <p onClick={()=> setMenu(!menu)} onMouseOver={()=> setMenu(!menu)} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
-                                <PiUserLight className='cursor-pointer text-[#781d75]' />
+                            <p onClick={()=> setMenu(!menu)} onMouseOver={()=> setMenu(!menu)} className='flex items-center flex-col font-bold cursor-pointer from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
+                                <PiUserLight className=' text-[#781d75]' />
                                 ACCOUNT
                             </p>
                             {
@@ -119,15 +126,12 @@ export const BottomMenu = () => {
                                                     Saved Items
                                                 </Link>
                                             </p>
-                                            <p>
-                                                <Link 
-                                                    to={`/signin`}
-                                                    onClick={scrollToTop}
-                                                    className='flex items-center p-2 mt-5 w-full bg-[#fb923c] rounded hover:opacity-75 transition-all text-white'
-                                                    >
-                                                    <PiSignOut className="m-2"/>
-                                                    Logout
-                                                </Link>
+                                            <p 
+                                                onClick={handleLogOut}
+                                                className='flex items-center p-2 mt-5 w-full bg-[#fb923c] rounded hover:opacity-75 transition-all text-white'
+                                                >
+                                                <PiSignOut className="m-2"/>
+                                                Logout
                                             </p>
                                             <p>
                                                 <Link 
@@ -145,10 +149,12 @@ export const BottomMenu = () => {
                     )
                     :
                     (
-                        <Link to={`/signin`} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
-                            <LuLock className='cursor-pointer text-[#781d75]' />
-                            SIGNIN
-                        </Link>
+                        <div>
+                            <Link to={`/signin`} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
+                                <LuLock className='cursor-pointer text-[#781d75]' />
+                                SIGNIN
+                            </Link>
+                        </div>
                     )
                 }
             </div>

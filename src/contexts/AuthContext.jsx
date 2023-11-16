@@ -3,10 +3,12 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, on
 import { auth } from '../Firebase'
 
 
+
 const AuthContext = createContext()
 
 export const AuthContextProvider = ({children}) => {
     const [user, setUser] = useState({})
+
 
     //signup
     const signUp = (email, passward) => {
@@ -31,6 +33,9 @@ export const AuthContextProvider = ({children}) => {
             unsubcribe()
         }
     });
+
+
+
 
   return (
     <AuthContext.Provider value={{signUp, signIn, logOut, user}}>
