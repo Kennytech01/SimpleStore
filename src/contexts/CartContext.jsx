@@ -97,6 +97,12 @@ export const CartProvider = ({children}) => {
     //   setLeftOut(prodLeft)
     // });
 
+    useEffect( () => {
+      window.addEventListener('scroll', () => {
+          window.scrollY > 70 ? setIsActive(true) : setIsActive(false)
+      });
+  })
+
 
     
   return (

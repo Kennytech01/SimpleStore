@@ -11,24 +11,24 @@ export const CartItem = ({item}) => {
 
   return ( 
     <div className='flex group'>
-        <div className='w-full min-h-28 border flex items-center  my-2 md:mx-10 sm:mx-5 p-2 rounded-lg'>
+        <div className='w-full min-h-28 flex items-center my-2 md:mx-10 sm:mx-5 p-2 rounded-lg shadow border border-gray/20'>
             <div className='p-2'>
-                <img src={images[0]} alt={item.title} className='max-w-[80px]' />
+                <img src={images[0]} alt={item.title} className='max-w-[80px] hover:scale-110 transition-all rounded duration-500 cursor-zoom-in' />
             </div>
             <div className=' p-2 w-full m- flex flex-col justify-between'>
-                <h1 className='text-stone-700'>{title}</h1>
+                <h1 className='text-green-focus font-bold'>{title}</h1>
                 <p className='flex justify-between items-center py-2 w-full'>
-                    <span className=' text-[#fb923c] group-hover:cursor-pointer'>{`$${parseFloat(price * amount).toLocaleString()}`}</span>
-                    <span onClick={()=> removeCart(id)} className='text-[#fb923c] hover:opacity-70 cursor-pointer sm:border border-[#fb923c] flex items-center p-1 rounded'>
+                    <span className=' text-green group-hover:cursor-pointer'>{`$${parseFloat(price * amount).toLocaleString()}`}</span>
+                    <span onClick={()=> removeCart(id)} className='text-green-focus hover:opacity-70 cursor-pointer sm:border border-green flex items-center p-1 rounded'>
                         <BsTrash3/> 
                         <span className='sm:flex hidden'>REMOVE</span>
                     </span>
                 </p>
-                <span className='border px-3 py-1 rounded-lg flex items-center justify-between text-sm m-2 sm:w-32 w-28 '>
-                    <BsDashLg onClick={()=> decreaseAmount(id)} className='cursor-pointer'/>
+                <p className='px-3 py-1 rounded-lg flex items-center justify-between text-sm m-2 sm:w-32 w-28 '>
+                    <BsDashLg onClick={()=> decreaseAmount(id)} size={20} className='cursor-pointer border rounded-full hover:bg-green-focus hover:text-white transition-all'/>
                     <span className='px-5 font-bold'>{amount}</span>
-                    <BsPlusLg onClick={()=> increaseAmount(id)} className='cursor-pointer'/>
-                </span>
+                    <BsPlusLg onClick={()=> increaseAmount(id)} size={20}  className='cursor-pointer border rounded-full hover:bg-green-focus hover:text-white transition-all'/>
+                </p>
             </div>
         </div>
     </div>

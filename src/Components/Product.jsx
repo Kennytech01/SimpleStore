@@ -34,25 +34,25 @@ return (
                     </a>
                 }
             </span>
-            <Link onClick={scrollToTop} to={`/productdetail/${product,id}`} className='h-1/2 flex justify-center items-center'>
-                <img src={thumbnail} alt="" className='h-full w-ful object-top hover:scale-110 duration-500 transition-all rounded '/>
+            <Link onClick={scrollToTop} to={`/productdetail/${product,id}`} className='h-1/2 flex justify-center items-center overflow-hidden'>
+                <img src={thumbnail} alt="" className='h-full object-top hover:scale-110 transition-all rounded duration-500 cursor-zoom-in'/>
             </Link>
-            <p className='font-bold flex flex-wrap items-center justify-between text-[#781d75] line-clamp-3 p-1 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'>
-                <span>{title}</span>
-                <a data-tooltip-content={`percentage off`} data-tooltip-id='my-tooltip'>-{discountPercentage}%</a>
+            <p className='flex flex-wrap items-center justify-between text-green-focus line-clamp-3 p-1 bg-gradient-to-r bg-clip-text text-transparent from-[#781d75] to-[#EC094D]'>
+                <span className='font-bold '>{title}</span>
+                <a data-tooltip-content={`percentage off`} data-tooltip-id='my-tooltip' >-{discountPercentage}%</a>
             </p>
-            <p className='flex justify-between items-center p-2'>
-                <p className='text-stone-100 font-bold bg-[#781d75] p-1 rounded'>${price.toLocaleString()}</p>
-                <p className='flex flex-col transition-all text-stone-500 font-semibold'>
-                    Quantity: {stock}
+            <p className='flex flex-wrap justify-between items-center p-2'>
+                <p className='text-green font-bold text-lg p-1 rounded'>${price.toLocaleString()}</p>
+                <p className='flex transition-all font-semibold'>
+                    Quantity: <span className='text-green px-1'>{stock}</span>
                 </p>
             </p>
         </div>
         <div className='h-1/2 flex justify-center items-center'>
             <div 
                 onClick={addCart} 
-                className='cursor-pointer w-full flex items-center justify-between h-10 m-3 mx-4 shadow bg-stone-200/40 rounded hover:bg-[#781d75] transition-all duration-300'>
-                <input type="button" value="Add To Cart" className=' w-full h-full font-bold hover:text-stone-100 text-stone-500' />
+                className='cursor-pointer w-full flex items-center justify-between h-10 m-3 mx-4 shadow rounded hover:bg-green text-green-focus transition-all '>
+                <input type="button" value="Add To Cart" className=' w-full h-full font-bold' />
                 <label htmlFor="" className='bg-stone-200 p-2 rounded m-1'><LiaPlusSolid/></label>
             </div>
         </div>

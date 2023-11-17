@@ -37,6 +37,7 @@ export const BottomMenu = () => {
     }
   
 
+
   return (
     <div>
         <div className='h-16 z-[99] bg-white md:-bottom-28 bottom-0 fixed w-full transition-all duration-500 flex items-center justify-around'>
@@ -82,7 +83,7 @@ export const BottomMenu = () => {
                     )
                 }
             </div>
-            <Link to='/' className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r bg-clip-text text-transparent'>
+            <Link to='/' onClick={scrollToTop} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r bg-clip-text text-transparent'>
                 <LuHome size={20} className='cursor-pointer text-[#781d75]'/>
                 HOME
             </Link>
