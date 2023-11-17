@@ -7,8 +7,8 @@ import {BsSuitHeart, BsFillSuitHeartFill} from 'react-icons/bs'
 
 export const Product = ({product}) => {
     const {id, title, discountPercentage, price, stock, thumbnail} = product
-    const {addToCart, leftOut} = useContext(CartContext)
-    const [likebtn, setLikebtn] = useState(false)
+    const {addToCart, leftOut, likebtn, setLikebtn} = useContext(CartContext)
+   
 
 
     const addCart = () => {

@@ -19,7 +19,7 @@ export const Sidebar = () => {
       }
 
   return (
-    <div  className='lg:w-80 w-60 bg-white text-stone-700 h-80 flex items-center rounded shadow'>
+    <div className='lg:w-80 w-60 bg-white text-stone-700 h-80 flex items-center rounded shadow'>
         <div className='flex flex-col p-3 w-full transition-all '>
             <NavLink 
                 to={`acct_info`}

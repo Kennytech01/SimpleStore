@@ -8,6 +8,7 @@ export const CartProvider = ({children}) => {
     const [isActive, setIsActive] = useState(false)
     const [total, setTotal] = useState(0)
     const [leftOut, setLeftOut] = useState(0)
+    const [likebtn, setLikebtn] = useState(false)
     
     // add to cart  
     const addToCart = (product,id) => {
@@ -106,7 +107,7 @@ export const CartProvider = ({children}) => {
 
     
   return (
-    <CartContext.Provider value={{addToCart, cart, removeCart, clearCart, increaseAmount, decreaseAmount, itemAmount, isActive, setIsActive, total, leftOut}}>
+    <CartContext.Provider value={{likebtn, setLikebtn, addToCart, cart, removeCart, clearCart, increaseAmount, decreaseAmount, itemAmount, isActive, setIsActive, total, leftOut}}>
         {children}
     </CartContext.Provider>
   )
