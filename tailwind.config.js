@@ -12,7 +12,8 @@ export default {
       'gray-dark': '#273444',
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
-      'black': '#1f2937'
+      'black': '#000',
+      'yellow': '#ffff00'
     },
   }
   // plugins: [],

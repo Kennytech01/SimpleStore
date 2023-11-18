@@ -7,7 +7,7 @@ export const PromoDisplay = () => {
         <div className='flex text-xl'>
             <TypeAnimation 
                 sequence={[
-                    'Welcome to SimpleStore',
+                    'Welcome to FloxyEmpire',
                     2000,
                     'We sell Quality Laptops',
                     2000,

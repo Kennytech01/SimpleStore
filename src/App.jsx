@@ -20,6 +20,13 @@ import { AccountInfo } from './Components/AccountInfo'
 import { Orders } from './Components/Orders'
 import { MyCart } from './Components/MyCart'
 import { Tooltip } from 'react-tooltip'
+import { Fragrance } from './Pages/Fragrance'
+import { HomeDeco } from './Pages/HomeDeco'
+import { Laptops} from './Pages/Laptops'
+import { Skincare } from './Pages/Skincare'
+import { SmartPhones } from './Pages/SmartPhones'
+import { Supermarket } from './Pages/Supermarket'
+import { AllCategories } from './Pages/AllCategories'
 
 const App = () => {
   return (
@@ -42,6 +49,14 @@ const App = () => {
             <Route path='order' element={<Orders/>}/>
             <Route path='saved_items' element={<SavedItems/>} />
             <Route path='acct_info' element={<AccountInfo/>}/>
+          </Route>
+          <Route path='categories' element={<AllCategories/>}>
+            <Route path='fragrance' element={<Fragrance/>}/>
+            <Route path='home_deco' element={<HomeDeco/>}/>
+            <Route path='laptops' element={<Laptops/>}/>
+            <Route path='skincare' element={<Skincare/>}/>
+            <Route path='smart_phone' element={<SmartPhones/>}/>
+            <Route path='super_market' element={<Supermarket/>}/>
           </Route>
         </Routes>
         <ConditionRoute>

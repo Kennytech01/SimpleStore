@@ -14,7 +14,7 @@ import {PiSignOut, PiUserLight, PiUser} from 'react-icons/pi'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import { toast } from 'react-toastify'
-
+import { GiFlowerPot } from "react-icons/gi";
 
 export const Navbar = () => {
     const {isActive, setIsActive } = useContext(CartContext)
@@ -54,8 +54,8 @@ export const Navbar = () => {
         {/* leftSide */}   
         <div className='mx-2 relative hidden lg:flex'>
             <Link onClick={scrollToTop} to={`/`} className={`${isActive? 'text-green ' : 'text-green-focus'} font-bold text-3xl md:text-4xl text-center flex items-center`}>
-                SimpleStore
-                <FcShop/>
+                FloxyEmpire
+                <GiFlowerPot/>
             </Link>
         </div>
         <div className={`h-1/2 w-96  top-0 rounded bg-white flex items-center relative border border-gray`}>
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 name="search"
                 value={searchItem}
                 onChange={(e)=> setSearchItem(e.target.value)}
-                placeholder='search on Simplestore...' 
+                placeholder='search on FloxyEmpire...' 
                 className='text-stone-500  w-full h-full rounded outline-none transition-all duration-1000'
             />
         </div>
