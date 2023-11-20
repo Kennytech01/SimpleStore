@@ -154,8 +154,8 @@ export const BottomMenu = () => {
                     :
                     (
                         <div>
-                            <Link to={`/signin`} className='flex items-center flex-col font-bold from-[#781d75] to-[#fb923c] via-[#ec094d] bg-gradient-to-r text-transparent bg-clip-text'>
-                                <LuLock className='cursor-pointer text-[#781d75]' />
+                            <Link to={`/signin`} className='flex items-center flex-col font-bold cursor-pointer text-green-focus'>
+                                <LuLock />
                                 SIGNIN
                             </Link>
                         </div>

@@ -58,20 +58,20 @@ import { GiFlowerPot } from "react-icons/gi";
             </div>
         </div>
         <div>
-            <h1 className='text-center text-3xl font-bold text-green-focus bg-green/30 flex items-center justify-center '>
+            <h1 className='text-center sm:text-3xl text-xl p-1 font-bold text-green-focus bg-green/30 flex items-center justify-center '>
                 Shop From Our Collections 
                 <MdOutlineAddShoppingCart/>
             </h1>
-            <div className='text-center flex justify-center items-center h-48 border '>
+            <div className='text-center '>
                 <Collections/>
             </div>
         </div>
         {
             (SearchResult.length) ?
                 <div className='flex relative mx-10 mt-5 gap-4'>
-                    <CategoryMenu/>
+                    {/* <CategoryMenu/> */}
                     <div>
-                        <div id='products' className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-full'>
+                        <div id='products' className=' grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 h-full'>
                         {
                             SearchResult.map((product) => {
                                 return (

@@ -72,7 +72,7 @@ export const Navbar = () => {
         {/* right-Side */}
         <div className={`${isActive? 'text-green' : 'text-green-focus'} md:flex items-center sm:px-5 px-2 `} >
             <div className='relative'>
-                <Link to={`/mycart`} onClick={scrollToTop} className= {` ${ isActive && 'hover:underline decoration-gray-light decoration-2 underline-offset-4'} cursor-pointer hover:underline decoration-green-focus decoration-2 underline-offset-4`} >
+                <Link to={`/mycart/cartpage`} onClick={scrollToTop} className= {` ${ isActive && 'hover:underline decoration-gray-light decoration-2 underline-offset-4'} cursor-pointer hover:underline decoration-green-focus decoration-2 underline-offset-4`} >
                     <span className={`${isActive ? 'bg-green' : 'bg-green-focus'} text-white  absolute top- 3 md: -top-1 shadow-lg text-sm p-2 left-7  rounded-full w-5 h-5 flex items-center justify-center`}>{itemAmount}</span>
                     <p className={ `flex items-center px-3 py-2 rounded-lg`}>
                         <BsCart4  size={20} className={`mr-2 ${isActive? 'text-white' : 'text-green-focus'}`}/>

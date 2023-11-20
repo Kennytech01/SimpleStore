@@ -4,7 +4,7 @@ import {LuPhoneCall} from 'react-icons/lu'
 
 export const Footer = () => {
   return (
-    <div className=' text-white shadow-inner bg-[#591757 bg-black flex justify-center items-center mt-32'>
+    <div className=' text-white shadow-inner bg-[#591757 bg-green-focus flex justify-center items-center mt-28'>
         <div className='flex flex-wrap items-center justify-between m-3 mb-20 md:mb-0 w-full'>
             {/* follow us  */}
             <div className='flex flex-col items-start justify-center m-2'>
@@ -36,9 +36,9 @@ export const Footer = () => {
             </div>
             {/* News Letter */}
             <form className='flex items-center justify-center m-2'>
-                 <input type="email" name="search" id="" placeholder='Enter your email address' className='p-2 w-full rounded outline-none text-[#781d75]'/>
-                 <button type="submit" className='border p-2 mx-2 rounded hover:bg-white hover:text-black shadow-lg font-bold'>MALE</button>
-                 <button type="submit" className='border p-2 mx-2 rounded hover:bg-white hover:text-black shadow-lg font-bold'>FEMALE</button>
+                 <input type="email" name="search" id="" placeholder='example@gmail.com' className='p-2 w-full rounded outline-none text-[#781d75]'/>
+                 <button type="submit" className='border p-2 mx-2 rounded hover:bg-white hover:text-green-focus shadow-lg font-bold'>MALE</button>
+                 <button type="submit" className='border p-2 mx-2 rounded hover:bg-white hover:text-green-focus shadow-lg font-bold'>FEMALE</button>
             </form>
         </div>
     </div>

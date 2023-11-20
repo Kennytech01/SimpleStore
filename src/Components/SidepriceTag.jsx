@@ -21,7 +21,7 @@ export const SidepriceTag = () => {
   }
 
   return (
-    <Link to={`/mycart`} onClick={scrollToTop} className='fixed top-1/2 z-[999] md:right-0 -right-40 transition-all bg-green-focus h-20 w-auto text-white font-bold px-1 flex flex-col justify-around items-center shadow-lg rounded-l-lg'>
+    <Link to={`/mycart/cartpage`} onClick={scrollToTop} className='fixed top-1/2 z-[999] md:right-0 -right-40 transition-all bg-green-focus h-20 w-auto text-white font-bold px-1 flex flex-col justify-around items-center shadow-lg rounded-l-lg'>
       <p className='flex items-center text-sm w-full'>
           {itemAmount > 1 ? itemAmount + ' items' : itemAmount + ' item'}
           <FaShopify className='mr-1'/>

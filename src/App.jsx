@@ -27,6 +27,8 @@ import { Skincare } from './Pages/Skincare'
 import { SmartPhones } from './Pages/SmartPhones'
 import { Supermarket } from './Pages/Supermarket'
 import { AllCategories } from './Pages/AllCategories'
+import { AllCartItems } from './Pages/AllCartItems'
+import { Payment } from './Components/Payment'
 
 const App = () => {
   return (
@@ -44,7 +46,6 @@ const App = () => {
           <Route path='/account' element={<Account/>}/>
           <Route path='/productdetail/:id' element={<ProductDetail/>}/>
           <Route path='/admindashboard' element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
-          <Route path='mycart' element={<MyCart/>}/>
           <Route path='account' element={<Account/>}>
             <Route path='order' element={<Orders/>}/>
             <Route path='saved_items' element={<SavedItems/>} />
@@ -58,6 +59,10 @@ const App = () => {
             <Route path='smart_phone' element={<SmartPhones/>}/>
             <Route path='super_market' element={<Supermarket/>}/>
           </Route>
+          <Route path='mycart' element={<MyCart/>}>
+            <Route path='cartpage' element={<AllCartItems/>}/>
+          </Route>
+          <Route path='payment' element={<Payment/>}/>
         </Routes>
         <ConditionRoute>
           <BottomMenu/>
