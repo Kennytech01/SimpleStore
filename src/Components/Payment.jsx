@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react'
 import {Link} from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 import { BsArrowRight, BsCashCoin} from 'react-icons/bs'
-import { MdPayment} from 'react-icons/md'
+import { MdPayment, MdVerifiedUser} from 'react-icons/md'
 import { VscVerifiedFilled, VscVerified} from "react-icons/vsc";
 import { location } from '../Components/PickupLocationData'
 import { PiMapPinLineLight } from "react-icons/pi";
@@ -953,10 +953,10 @@ export const Payment = () => {
 //   };
 
   return (
-    <div className='md:flex justify-between md:mx-10 mx-5 my-5 gap-4'>
+    <div className='md:flex justify-between lg:mx-10 mx-5 my-5 gap-4'>
         <div className=' w-full'>
             <div className='border'>
-                <h1 className='sticky top-20 bg-white transition-all font-bold p-3 border-b border-green-focus uppercase py-5 flex items-center'>
+                <h1 className='sticky top-20 z-10 bg-white transition-all font-bold p-3 border-b border-green-focus uppercase py-5 flex items-center'>
                     <VscVerifiedFilled className='text-green' />
                     Choose delivery option
                 </h1>
@@ -975,7 +975,7 @@ export const Payment = () => {
                                 currentValue === 'on' && (
                                     <div>
                                         <p className='text-sm font-light py-2'>Click on Add Address to specify a delivery address.</p>
-                                        <p onClick={()=> setAddAddress(!addAddress)} className='flex items-center justify-center'>
+                                        <p onClick={()=> setAddAddress(!addAddress)} className='flex items-center justify-center bg-gray/10 py-5'>
                                             <button  className='drop-shadow-xl p-2 rounded bg-green-focus text-white hover:opacity-80 transition-all'>
                                                 {
                                                     addAddress ? <span>Enter your Location deatils below</span> : <span>Add Delivery Address</span>
@@ -1105,11 +1105,11 @@ export const Payment = () => {
                                     currentValue === 'off' && (
                                         <div>
                                             <p className='text-sm font-light py-2'>Select a pickup location in your area from our avaliable locations nationwide.</p>
-                                            <p className='flex items-center justify-center'>
+                                            <p className='flex items-center justify-center bg-gray/10 py-5'>
                                                 <button 
                                                     onClick={PickupBtn}
                                                     id='pickupBtn'  
-                                                    className={`drop-shadow-xl p-2 rounded bg-green-focus text-white hover:opacity-80 transition-all`}>
+                                                    className={`drop-shadow-xl p-2 rounded bg-green-focus text-white hover:opacity-80 transition-all `}>
                                                         Select a Pickup Location
                                                 </button>
                                             </p>
@@ -1117,7 +1117,7 @@ export const Payment = () => {
                                                 pickup ? (
                                                     <div>
                                                         <form>
-                                                            <p>Find a pick up station nearest to you</p>
+                                                            <p className='p-1 font-bold'>Find a pick up station nearest to you</p>
                                                             <div className='md:flex  w-full gap-4 my-2'>
                                                                 <select required onchange={()=> toggleLGA()} name="state" id='state' className='w-full p-3 my-1 outline-none'>
                                                                     <option value="" selected="selected">- Select -</option>
@@ -1165,9 +1165,9 @@ export const Payment = () => {
                                                             <div>
                                                                 <div className='flex flex-wrap justify-center gap-4'>
                                                                     {
-                                                                        location.map((item)=> {
+                                                                        location.map((item, id)=> {
                                                                         return (
-                                                                                <div className='shadow text-green-focus border rounded'>
+                                                                                <div key={item.id} className='shadow text-green-focus border rounded w-96'>
                                                                                     <p className='font-bold border-b py-3'>
                                                                                         <input type="radio" name="" id="" className='mx-1' />
                                                                                         Select this pick up station
@@ -1195,7 +1195,7 @@ export const Payment = () => {
                 </div>
             </div>
             <div className='border mt-4'>
-                <h1 className='sticky top-20 bg-white transition-all font-bold p-3 border-b border-green-focus uppercase py-5 flex items-center'>
+                <h1 className='sticky top-20 z-10 bg-white transition-all font-bold p-3 border-b border-green-focus uppercase py-5 flex items-center'>
                     <VscVerified className='text-green' />
                     Payment summary
                 </h1>
@@ -1226,16 +1226,39 @@ export const Payment = () => {
                 </form>
             </div>
         </div>
-        <div className=' md:w-[26rem] bg-white rounded drop-shadow my-4 md:my-0'>
-            <div className=' uppercase h-60 md:mx-0  bg-white sticky top-20'>
-                <p className='border-b p-2 py-5 font-bold text-green-focus'>Payment Summary</p>
-                <div className='flex flex-wrap items-center cursor-pointer justify-between mx-2 bg-white py-5 my-1'>
-                    <span className='flex items-center'>Subtotal <BsArrowRight size={20} className='mx-1 font-bold animate-pulse'/></span>
-                    <span  className=' text-green text-2xl px-2'>
-                    ${total.toLocaleString()}
+        {/* order summary */}
+        <div className=' md:w-[27rem] bg-white rounded drop-shadow my-4 md:my-0'>
+            <div className=' uppercase h-80 md:mx-0  bg-white transition-all sticky top-20 border'>
+                <p className='border-b p-2 py-5 font-bold text-green-focus flex items-center sticky top-20 md:top-0 bg-white'>
+                    <MdVerifiedUser className='text-green'/>
+                    Order Summary
+                </p>
+                <div className='flex flex-wrap items-center cursor-pointer justify-between bg-gray/10 p-2 my-1'>
+                    <span className='flex items-center'>
+                        Item's total
+                    </span>
+                    <span  className=' text-green text-lg'>
+                        ${total.toLocaleString()}
                     </span>
                 </div>
-                <Link to={`/payment`}  className=' p-4 justify-center bg-green-focus text-white font-bold shadow hover:opacity-80 transition-all mx-2 flex items-center rounded'>
+                <div className='flex flex-wrap items-center cursor-pointer justify-between bg-gray/10 p-2 my-1'>
+                    <span className='flex items-center'>
+                        Delivery fee
+                    </span>
+                    <span  className=' text-green text-lg'>
+                        ${total.toLocaleString()}
+                    </span>
+                </div>
+                <div className='flex flex-wrap items-center cursor-pointer justify-between bg-gray/10 p-2 my-1'>
+                    <span className='flex items-center font-bold'>
+                        total  
+                        <BsArrowRight size={20} className='mx-1 font-bold animate-pulse'/>
+                    </span>
+                    <span  className=' text-green text-2xl'>
+                        ${total.toLocaleString()}
+                    </span>
+                </div>
+                <Link to={`/payment`}  className=' p-4 my-4 justify-center bg-green-focus text-white font-bold shadow hover:opacity-80 transition-all mx-2 flex items-center rounded'>
                     confirm order
                     <MdPayment className='ml-1'/>
                     (${total.toLocaleString()})

@@ -16,12 +16,12 @@ export const SmartPhones = () => {
 
   return (
     <div className='w-full transition-all'>
-      <h1 className='text-green-focus border-b font-bold text-xl p-2 sticky top-20 mx-2  bg-white'>Smart Phones</h1>
-      <div className='grid grid-cols-4 gap-4 mx-2 mt-2'>
+      <h1 className='text-green-focus border-b font-bol text-xl p-5 sticky top-20 mx-2  bg-white z-10'>Search results- Smart Phones</h1>
+      <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-10 sm:mx-3 mt-2'>
         {
-          items.filter((item) => item.category == 'smartphones').map((item) => {
+          items.filter((item) => item.category == 'smartphones').map((item, id) => {
             return (
-              <div  className='rounded h-96 flex flex-col justify-between sm:p-4 p-1 bg-white shadow'>
+              <div key={id} className='rounded h-96 flex flex-col justify-between sm:p-4 p-1 bg-white shadow'>
                 <div className='h-4/5 flex group flex-col justify-center'>
                     <span onClick={()=> setLikebtn(!likebtn)} className='flex text-sm justify-end font-bold text-[#fb923c] m-5 transition-all'>
                         {
@@ -63,8 +63,8 @@ export const SmartPhones = () => {
         }
       </div>
       <div className='mt-10'>
-        <h1 className='text-green-focus border-b font-bold text-xl p-2 sticky top-20 bg-white mx-2'>You may also like</h1>
-        <div className='grid grid-cols-4 gap-4 mx-2 mt-2'>
+        <h1 className='text-green-focus border-b font-bold text-xl p-5 z-10 sticky top-20 bg-white mx-2'>You may also like</h1>
+        <div className='grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-10 sm:mx-3 mt-2'>
           {
             items.filter((item) => item.category == 'laptops').map((item) => {
               return (

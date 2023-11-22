@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext'
 import { CartItem } from '../Components/CartItem'
 import { BsSuitHeart} from 'react-icons/bs'
-import { MdOutlineRemoveShoppingCart, MdReviews} from 'react-icons/md'
+import { MdOutlineRemoveShoppingCart, MdReviews, MdAddShoppingCart} from 'react-icons/md'
 
 
 export const AllCartItems = () => {
@@ -15,12 +15,12 @@ export const AllCartItems = () => {
     }
 
   return (
-    <div className='w-full'>
+    <div className='w-full transition-all'>
         <div className='bg-white relative shadow-lg w-full rounded '>
-            <div className='h-20 mx-2 flex items-center justify-between border-b sticky top-20 bg-white'>
+            <div className='p-5 mx-2 flex items-center justify-between border-b sticky top-20 bg-white'>
                 <p className='flex items-center text-lg font-bold uppercase text-green-focus '>
                     <p>{itemAmount > 1 ? itemAmount + ' items' : itemAmount + ' item'}</p>
-                    <FaShopify size={30} className='mr-1 text-green'/>
+                    <MdAddShoppingCart size={30} className='mr-1 text-green'/>
                 </p>
             </div>
              {/* cart items  */}
